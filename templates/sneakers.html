@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneakers</title>
+</head>
+<body>
+    <!-- Loop over all items from .sneakers collection using .find -->
+    {% for sneaker in sneakers %}
+        {{ sneaker.category_name }} <br>
+        {{ sneaker.shoe_name }} <br>
+        {{ sneaker.release_year }} <br>
+        {{ sneaker.shoe_description }} <br>
+        {{ sneaker.date_added }} <br>
+        {{ sneaker.user }} <br>
+        {{ sneaker.image_url }} <br>
+    {% endfor %}
+</body>
+</html>

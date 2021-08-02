@@ -40,7 +40,20 @@ button {
   background-color: black !important;
 }
 
+button:hover {
+  opacity: 0.7;
+}
+
 h2,
 h3 {
   margin-top: 55px
+}
+
+/* Sign up and Login user redirects */
+.guide-user {
+  color: red;
+}
+
+.guide-user:hover {
+  opacity: 0.7;
 }

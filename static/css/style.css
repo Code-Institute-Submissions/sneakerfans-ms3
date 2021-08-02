@@ -4,19 +4,28 @@
 }
 
 nav {
-    background-color: rgba(255,182,193, 0.1);
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
-    height: 80px;
-    line-height: 80px;
-  }
+  background-color: rgba(255, 182, 193, 0.1);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+  height: 80px;
+  line-height: 80px;
+}
 
 nav a {
-      color: black !important;
-      font-weight: 500;
-      font-size: 18px !important;
-  }
+  color: black !important;
+  font-weight: 500;
+  font-size: 18px !important;
+}
 
 .fa-user {
-      font-size: 18px;
-      margin-right: 5px;
-  }
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+button {
+  border-radius: 30px !important;
+}
+
+h2,
+h3 {
+  margin-top: 55px
+}

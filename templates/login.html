@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="center-align">Sign Up</h3>
+<h3 class="center-align">Log In</h3>
 
 <div class="row">
-    <form class="col s12 m8 offset-m2" method="post" action="{{ url_for('sign_up') }}">
+    <form class="col s12 m8 offset-m2" method="post" action="{{ url_for('login') }}">
         <div class="card-panel">
             <!-- Username field -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-user-plus prefix"></i>
+                    <i class="fas fa-user-cog prefix"></i>
                     <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                     <label for="username">Username</label>
                 </div>
@@ -22,19 +22,19 @@
                     <label for="password">Password</label>
                 </div>
             </div>
-            <!-- Register button -->
+            <!-- Log In button -->
             <div class="row">
-                <button type="submit" class="col s8 offset-s2 m4 offset-m4 btn-large text-shadow white-text">Join Us</button>
+                <button type="submit" class="col s8 offset-s2 m4 offset-m4 btn-large text-shadow white-text">Log In</button>
             </div>
         </div>
     </form>
 </div>
 
-<!-- Redirect account holders to log in form -->
+<!-- Redirect new users to sign up form -->
 <div class="row">
     <div class="col s12">
         <p class="center-align">
-            Already have an account? <a href="{{ url_for('login') }}">Sign in now</a>
+            Don't have an account? <a href="{{ url_for('sign_up') }}">Sign up now</a>
         </p>
     </div>
 </div>

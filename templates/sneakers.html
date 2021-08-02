@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Sneakers</h2>
+<h2 class="center">Sneakers</h2>
     <!-- Loop over all items from .sneakers collection using .find -->
+<div class="container-fluid">
     {% for sneaker in sneakers %}
         {{ sneaker.category_name }} <br>
         {{ sneaker.shoe_name }} <br>
@@ -12,5 +13,6 @@
         {{ sneaker.user }} <br>
         {{ sneaker.image_url }} <br>
     {% endfor %}
+</div>
 
 {% endblock %}

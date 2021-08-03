@@ -19,7 +19,6 @@
         <!-- top navbar -->
         <div class="navbar-fixed">
             <nav>
-                <div class="container-fluid">
                 <div class="nav-wrapper">
                     <a href="{{ url_for('get_sneakers') }}" class="brand-logo">
                         <img src="{{url_for('static', filename='images/logo-white.png')}}" height="75"
@@ -37,7 +36,6 @@
                     </ul>
                 </div>
             </nav>
-        </div>
         </div>
 
         <!-- mobile sidenav -->
@@ -66,7 +64,7 @@
         {% endwith %}
     </section>
 
-    <main class="container-fluid">
+    <main>
         {% block content %}
         {% endblock %}
     </main> 

@@ -13,6 +13,8 @@
 * [Log Out Page](wireframes/logout.png)
 * [Sign Up Page](wireframes/signup.png)
 
+* [Database Schema](wireframes/schema.png)
+
 
 # User Stories:
 1. **As a fan of new and retro sneakers I am seeking a website that allows me to search sneakers as well as add my own ideas to the website**

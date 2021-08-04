@@ -1,5 +1,8 @@
+# SNEAKERFANS
+
 ## [View Live Project](https://ms3-sneakerfans.herokuapp.com/)
 
+## Wireframes:
 * [Home Not Logged In](wireframes/home1.png)
 * [Home Logged In](wireframes/home2.png)
 * [Browse Collection](wireframes/browse.png)

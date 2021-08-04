@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="imgage/png" href="{{ url_for('static', filename='images/favicon.png') }}" sizes="512x512">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
         integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
         crossorigin="anonymous" type="text/css">
@@ -62,9 +63,9 @@
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
-                <div class="row flashes">
-                    <h4 class="white-text #43a047 green darken-1 center-align">{{ message }}</h4>
-                </div>
+                    <div class="row flashes">
+                        <h4 class="white-text #43a047 green darken-1 center-align">{{ message }}</h4>
+                    </div>
                 {% endfor %}
             {% endif %}
         {% endwith %}

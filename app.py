@@ -29,6 +29,13 @@ def get_sneakers():
     return render_template("sneakers.html", sneakers=sneakers)
 
 
+@app.route("/all_sneakers")
+def all_sneakers():
+    # Find all sneakers in database
+    sneakers = mongo.db.sneakers.find()
+    return render_template("all-sneakers.html", sneakers=sneakers)
+
+
 # Sign Up page
 @app.route("/sign_up", methods=["GET", "POST"])
 def sign_up():

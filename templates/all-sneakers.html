@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="center">SNEAKERFANS</h2>
+    <!-- Loop over all items from .sneakers collection using .find -->
+
+    <div class="row">
+        {% for sneaker in sneakers %}
+            <div class="col s12 m4 l4">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="{{ sneaker.image_url }}">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator">{{ sneaker.shoe_name}}</span>
+                        <p><a href="#">Should go to full descripiton page</a></p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+
+{% endblock %}

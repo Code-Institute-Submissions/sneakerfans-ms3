@@ -21,7 +21,7 @@ nav a:hover {
   margin-right: 5px;
 }
 
-button {
+button, .cta {
   border-radius: 30px !important;
   background-color: black !important;
 }
@@ -49,18 +49,25 @@ h3 {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 700px;
+  min-height: 650px;
   max-width: 100% !important;
+}
+
+@media screen and (min-width:1024px) and (max-width:1900px) {
+.cta {
+  margin-top: 580px;
+  margin-bottom: 20px
+}
 }
 
 @media(max-width: 768px) {
   .hero-home {
-    background-position-x: 90%;
+    background-position-x: 85%;
     background-size: cover;
-    min-height: 550px
+    min-height: 410px
   }
-}
-
-.hero-cta {
-  margin-top: px;
+  .cta {
+    margin-top: 380px;
+    margin-bottom: 20px
+  }
 }

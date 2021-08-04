@@ -16,6 +16,10 @@ nav a:hover {
   color: black !important;
 }
 
+nav .brand-logo:hover {
+  background-color: transparent !important;
+}
+
 .fa-user {
   font-size: 18px;
   margin-right: 5px;
@@ -71,3 +75,11 @@ h3 {
     margin-bottom: 20px
   }
 }
+
+/* Keep all card containers and images the same height */
+.card img {
+  max-height: 230px;
+  object-fit: cover;
+}
+
+

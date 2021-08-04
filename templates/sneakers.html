@@ -8,17 +8,23 @@
     </div>
 </div>
 
-<h2 class="center">SNEAKERFANS</h2>
+<h2 class="center">This Week's Sneaker Picks</h2>
     <!-- Loop over all items from .sneakers collection using .find -->
 
-    {% for sneaker in sneakers %}
-        {{ sneaker.category_name }} <br>
-        {{ sneaker.shoe_name }} <br>
-        {{ sneaker.release_year }} <br>
-        {{ sneaker.shoe_description }} <br>
-        {{ sneaker.date_added }} <br>
-        {{ sneaker.user }} <br>
-        {{ sneaker.image_url }} <br>
-    {% endfor %}
+    <div class="row">
+        {% for sneaker in sneakers %}
+            <div class="col s12 m3 l4">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="{{ sneaker.image_url }}">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator">{{ sneaker.shoe_name}}</span>
+                        <p><a href="#">Should go to full descripiton page</a></p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
 
 {% endblock %}

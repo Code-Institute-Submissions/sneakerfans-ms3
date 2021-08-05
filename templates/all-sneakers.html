@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
-
-<h2 class="center">SNEAKERFANS</h2>
+<div class="container">
+    <h2 class="center">SNEAKERFANS</h2>
+</div>
     <!-- Loop over all items from .sneakers collection using .find -->
 
     <div class="row">
         {% for sneaker in sneakers %}
             <div class="col s12 m3 l4">
-                <div class="card">
+                <div class="card tooltipped" data-position="top" data-tooltip="Click for more info">
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="{{ sneaker.image_url }}">
                     </div>

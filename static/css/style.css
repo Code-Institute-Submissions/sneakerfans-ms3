@@ -82,4 +82,8 @@ h3 {
   object-fit: cover;
 }
 
+.card-content a {
+  color: red;
+}
+
 

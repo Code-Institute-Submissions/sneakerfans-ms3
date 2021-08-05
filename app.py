@@ -111,6 +111,12 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/add_sneakers")
+def add_sneakers():
+    # Find all sneakers in database
+    return render_template("add-sneakers.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

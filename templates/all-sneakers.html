@@ -13,8 +13,8 @@
                         <img class="activator" src="{{ sneaker.image_url }}">
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator">{{ sneaker.shoe_name}}</span>
-                        <p><a href="#">Should go to full descripiton page</a></p>
+                        <span class="card-title activator">{{ sneaker.category_name.capitalize() }}</span>
+                        <p><a href="#">{{ sneaker.shoe_name.title() }}</a></p>
                     </div>
                 </div>
             </div>

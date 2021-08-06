@@ -113,8 +113,9 @@ def logout():
 
 @app.route("/add_sneakers")
 def add_sneakers():
-    # Find all sneakers in database
-    return render_template("add-sneakers.html")
+    # Create categories variable to alphabetically sort html select
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("add-sneakers.html", categories=categories)
 
 
 if __name__ == "__main__":

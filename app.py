@@ -121,6 +121,7 @@ def add_sneakers():
             "release_year": request.form.get("release_year"),
             "shoe_description": request.form.get("shoe_description"),
             "image_url": request.form.get("image_url")
+            "user": session["user"]
         }
         # Insert all form data to mongodb sneakers collection
         mongo.db.sneakers.insert_one(add)

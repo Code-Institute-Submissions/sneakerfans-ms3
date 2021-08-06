@@ -111,8 +111,19 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_sneakers")
+@app.route("/add_sneakers", methods=["GET", "POST"])
 def add_sneakers():
+    if request.method == "POST":
+        # Create dictionary to collect all form data
+        add = {
+            "category_name": request.form.get("category_name"),
+            "shoe_name": request.form.get("shoe_name"),
+            "release_year": request.form.get("release_year"),
+            "shoe_description": request.form.get("shoe_description"),
+            "image_url": request.form.get("image_url")
+        }
+        # Insert all form data to mongodb sneakers collection
+        mongo.db.sneakers.insert_one(add)
     # Create categories variable to alphabetically sort html select
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add-sneakers.html", categories=categories)

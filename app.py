@@ -120,11 +120,13 @@ def add_sneakers():
             "shoe_name": request.form.get("shoe_name"),
             "release_year": request.form.get("release_year"),
             "shoe_description": request.form.get("shoe_description"),
-            "image_url": request.form.get("image_url")
+            "image_url": request.form.get("image_url"),
             "user": session["user"]
         }
         # Insert all form data to mongodb sneakers collection
         mongo.db.sneakers.insert_one(add)
+        flash("Your sneakers have been added!")
+        return redirect(url_for("get_sneakers"))
     # Create categories variable to alphabetically sort html select
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add-sneakers.html", categories=categories)

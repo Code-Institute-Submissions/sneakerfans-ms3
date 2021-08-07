@@ -18,9 +18,11 @@
             <div class="col s12 m3 l4">
                 <div class="card">
                     <div class="card-image waves-effect waves-block waves-light">
+                        <!-- Show image from database -->
                         <img class="activator" src="{{ sneaker.image_url }}">
                     </div>
                     <div class="card-content">
+                        <!-- Show title, shoename and user from database -->
                         <span class="card-title activator">{{ sneaker.category_name.capitalize() }}</span>
                         <p><a href="#">{{ sneaker.shoe_name.title() }}</a></p>
                         <p><em>Added by: {{ sneaker.user }}</em></p>

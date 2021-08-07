@@ -36,6 +36,15 @@ def all_sneakers():
     return render_template("all-sneakers.html", sneakers=sneakers)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    # Retrieve user query from search form
+    query = request.form.get("query")
+    # Find sneakers from text index search based on user form input
+    sneakers = mongo.db.sneakers.find({"$text": {"$search": query}})
+    return render_template("all-sneakers.html", sneakers=sneakers)
+
+
 # Sign Up page
 @app.route("/sign_up", methods=["GET", "POST"])
 def sign_up():

@@ -1,3 +1,4 @@
+/* Navigation styles */
 nav {
   background-color: black;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
@@ -25,6 +26,7 @@ nav a i {
   margin-right: 5px;
 }
 
+/* Button styles */
 button, .cta {
   border-radius: 30px !important;
   background-color: black !important;
@@ -34,12 +36,13 @@ button:hover {
   opacity: 0.7;
 }
 
+/* Heading styles */
 h2,
 h3 {
   margin-top: 55px
 }
 
-/* Sign up and Login user redirects */
+/* Sign up and Login user redirect link text */
 .guide-user {
   color: red;
 }
@@ -48,6 +51,7 @@ h3 {
   opacity: 0.7;
 }
 
+/* Home page hero image */
 .hero-home {
   background: url(../images/airjordan3hero.jpeg);
   background-position: center center;
@@ -57,6 +61,7 @@ h3 {
   max-width: 100% !important;
 }
 
+/* Home page hero image button responsive */
 @media screen and (min-width:1024px) and (max-width:1900px) {
 .cta {
   margin-top: 580px;
@@ -64,6 +69,7 @@ h3 {
 }
 }
 
+/* Home page hero image responsive */
 @media(max-width: 768px) {
   .hero-home {
     background-position-x: 85%;
@@ -86,4 +92,16 @@ h3 {
   color: red;
 }
 
+.flashes {
+  margin-top: 55px;
+}
+
+.flashes h4 {
+  margin: auto;
+}
+
+.profile {
+  margin: auto;
+}
+ 
 

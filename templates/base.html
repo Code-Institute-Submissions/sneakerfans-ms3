@@ -29,6 +29,7 @@
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{{ url_for('get_sneakers') }}">Home</a></li>
                         <li><a href="{{ url_for('all_sneakers') }}"><i class="fas fa-search"></i> Browse Collection</a></li>
+                        <!-- Show nav elements based on whether user is logged in or logged out -->
                         {% if session.user %}
                             <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="fas fa-user"></i> My Sneakers</a></li>
                             <li><a href="{{ url_for('add_sneakers') }}">Add Sneakers</a></li>
@@ -47,6 +48,7 @@
             <li><h4 class="center-align">SNEAKERFANS</h4></li>
             <li><a href="{{ url_for('get_sneakers') }}">Home</a></li>
             <li><a href="{{ url_for('all_sneakers') }}">Browse Collection</a></li>
+            <!-- Show nav elements based on whether user is logged in or logged out -->
             {% if session.user %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}">My Sneakers</a></li>
                 <li><a href="{{ url_for('add_sneakers') }}">Add Sneakers</a></li>
@@ -63,9 +65,11 @@
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
-                    <div class="row flashes">
-                        <h4 class="white-text #43a047 green darken-1 center-align">{{ message }}</h4>
+                <div class="container">
+                    <div class="row flashes card-panel">
+                        <h4 class="center-align">{{ message }}</h4>
                     </div>
+                </div>
                 {% endfor %}
             {% endif %}
         {% endwith %}

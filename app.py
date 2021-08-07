@@ -25,14 +25,14 @@ mongo = PyMongo(app)
 @app.route("/get_sneakers")
 def get_sneakers():
     # Find all sneakers in database
-    sneakers = mongo.db.sneakers.find()
+    sneakers = list(mongo.db.sneakers.find())
     return render_template("sneakers.html", sneakers=sneakers)
 
 
 @app.route("/all_sneakers")
 def all_sneakers():
     # Find all sneakers in database
-    sneakers = mongo.db.sneakers.find()
+    sneakers = list(mongo.db.sneakers.find())
     return render_template("all-sneakers.html", sneakers=sneakers)
 
 
@@ -41,7 +41,7 @@ def search():
     # Retrieve user query from search form
     query = request.form.get("query")
     # Find sneakers from text index search based on user form input
-    sneakers = mongo.db.sneakers.find({"$text": {"$search": query}})
+    sneakers = list(mongo.db.sneakers.find({"$text": {"$search": query}}))
     return render_template("all-sneakers.html", sneakers=sneakers)
 
 

@@ -27,7 +27,7 @@ nav a i {
 }
 
 /* Button styles */
-button, .cta {
+.buttons {
   border-radius: 30px !important;
   background-color: black !important;
 }
@@ -130,6 +130,10 @@ strong {
 
 .search-box {
   margin-bottom: 55px;
+}
+
+.search-go {
+  margin-top: 35px;
 }
 
 .shoe-name {

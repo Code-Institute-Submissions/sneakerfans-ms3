@@ -10,15 +10,15 @@
 <div class="container search-box">
     <div class="row card-panel">
         <form action="{{ url_for('search') }}" method="post" class="col s12">
-            <div class="row valign-wrapper center-align">
+            <div class="row center-align">
                 <div class="input-field col s12 m8">
                     <i class="fas fa-search prefix"></i>
                     <input type="text" name="query" id="query" minlength="3" class="validate" required>
                     <label for="query">Search All Sneakers</label>
                 </div>
-                <div class="col s12 m4">
+                <div class="col s12 m4 search-go">
                     <a href="{{ url_for('all_sneakers') }}" class="red btn text-shadow">Reset</a>
-                    <button type="submit" class="search-form text-shadow white-text">
+                    <button type="submit" class="black btn text-shadow white-text">
                         <i class="fas fa-search left"></i>
                         Search
                     </button>

@@ -42,6 +42,11 @@ h3 {
   margin-top: 55px
 }
 
+p,
+span {
+  color: black;
+}
+
 /* Sign up and Login user redirect link text */
 .guide-user {
   color: red;
@@ -122,4 +127,13 @@ h3 {
 strong {
   font-size: 18px;
 }
+
+.search-box {
+  margin-bottom: 55px;
+}
+
+.shoe-name {
+  color: #ff7f00;
+}
+
 

@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
-    <h2 class="center">SNEAKERFANS</h2>
-</div>
 
 <div class="container">
+    <div class="row">
+        <h2 class="center">SNEAKERFANS</h2>
+    </div>
+</div>
+
+<div class="container search-box">
     <div class="row card-panel">
         <form action="{{ url_for('search') }}" method="post" class="col s12">
             <div class="row valign-wrapper center-align">
@@ -30,18 +33,20 @@
     <div class="row">
         {% for sneaker in sneakers %}
             <div class="col s12 m3 l4">
-                <div class="card tooltipped" data-position="top" data-tooltip="Click for more info">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <!-- Show image from database -->
-                        <img class="activator" src="{{ sneaker.image_url }}">
+                <a href="{{ url_for('full_info', sneaker_id=sneaker._id) }}">
+                    <div class="card tooltipped" data-position="top" data-tooltip="Click for more info">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <!-- Show image from database -->
+                            <img class="activator" src="{{ sneaker.image_url }}">
+                        </div>
+                        <div class="card-content">
+                            <!-- Show title, shoename and user from database -->
+                            <span class="card-title activator">{{ sneaker.category_name.capitalize() }}</span>
+                            <p class="shoe-name">{{ sneaker.shoe_name.title() }}</p>
+                            <p>Added by: <em>{{ sneaker.user }}</em></p>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <!-- Show title, shoename and user from database -->
-                        <span class="card-title activator">{{ sneaker.category_name.capitalize() }}</span>
-                        <p><a href="#">{{ sneaker.shoe_name.title() }}</a></p>
-                        <p><em>Added by: {{ sneaker.user }}</em></p>
-                    </div>
-                </div>
+                </a>
             </div>
         {% endfor %}
     </div>

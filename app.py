@@ -36,6 +36,15 @@ def all_sneakers():
     return render_template("all-sneakers.html", sneakers=sneakers)
 
 
+@app.route("/full_info/<sneaker_id>")
+def full_info(sneaker_id):
+    # Find specific sneakers from collection using primary id
+    sneaker = mongo.db.sneakers.find_one({"_id": ObjectId(sneaker_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template(
+        "full-info.html", sneaker=sneaker, categories=categories)
+
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
     # Retrieve user query from search form

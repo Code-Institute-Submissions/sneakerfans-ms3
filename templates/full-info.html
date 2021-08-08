@@ -4,17 +4,36 @@
 <div class="container">
     <!-- Category -->
     <div class="row">
-        <h1 class="center-align">{{ sneaker.category_name }}</h1>
+        <h2 class="center-align">{{ sneaker.shoe_name.title() }}</h2>
     </div>
-    <!-- Recipe info & image -->
-    <div class="row">
-        <div class="col s12 m6">
-            <img src="{{ sneaker.image_url }}">
-        </div>
-        <div class="col s12 m6">
-            <div>
-                <p>{{ sneaker.shoe_description }}</p>
-            </div>
+</div>
+<!-- Recipe info & image -->
+<div class="full row">
+    <div class=" col s12 m5 l5">
+        <img class="full-image" src="{{ sneaker.image_url }}">
+    </div>
+    <div class="col s12 m7 l7">
+        <div class="full-text">
+            <p>
+                <strong>Category:</strong>
+                {{ sneaker.category_name.capitalize() }}
+            </p>
+            <p>
+                <strong>Release Year:</strong>
+                {{ sneaker.release_year }}
+            </p>
+            <p>
+                <strong>Description:</strong>
+                {{ sneaker.shoe_description }}
+            </p>
+            <p>
+                <strong>Added By:</strong>
+                {{ sneaker.user }}
+            </p>
+            <p>
+                <strong>Date Added:</strong>
+                {{ sneaker.date_added }}
+            </p>
         </div>
     </div>
 </div>

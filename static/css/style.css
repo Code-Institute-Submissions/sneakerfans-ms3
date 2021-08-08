@@ -104,4 +104,23 @@ h3 {
   margin: auto;
 }
  
+.full-image {
+  max-height: 450px;
+  object-fit: cover;
+  max-width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  margin: 10px;
+}
+
+.full-text {
+  padding: 0 20px 0;
+}
+
+.full {
+  padding: 15px;
+}
+
+strong {
+  font-size: 18px;
+}
 

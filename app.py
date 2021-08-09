@@ -92,7 +92,7 @@ def login():
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
-                    flash("Welcome back, {}".format(
+                    flash("Welcome back, {}!".format(
                         request.form.get("username")))
                     return redirect(url_for(
                         "profile", username=session["user"]))
@@ -111,12 +111,14 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+    sneakers = list(mongo.db.sneakers.find())
     # Retrieve active username from database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template(
+            "profile.html", username=username, sneakers=sneakers)
 
     return redirect(url_for("login"))
 

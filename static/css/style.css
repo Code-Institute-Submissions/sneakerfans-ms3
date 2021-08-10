@@ -32,6 +32,11 @@ nav a i {
   background-color: black !important;
 }
 
+.buttons-2 {
+  border-radius: 30px !important;
+  background-color: red !important;
+}
+
 button:hover {
   opacity: 0.7;
 }

@@ -7,7 +7,7 @@
 
 
 <div class="row">
-    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_sneakers', sneaker_id=sneaker._id)}}">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_sneakers', sneaker_id=sneaker._id)}}">
         <div class="card-panel">
             <!-- Category select dropdown -->
             <div class="row">
@@ -15,15 +15,16 @@
                     <i class="fas fa-check-circle prefix"></i>
                     <select id="category_name" name="category_name" class="validate" required>
                         <option value="" disabled>Choose category</option>
-                            {% for category in categories %}
-                                <!-- If cateogry name iteration matches our sneaker category name
+                        {% for category in categories %}
+                        <!-- If cateogry name iteration matches our sneaker category name
                                 Select that category  -->
-                                {% if category.category_name == sneaker.category_name %}
-                                    <option value="{{ category.category_name }}" selected>{{ category.category_name.capitalize() }}</option>
-                                {% else %}
-                                    <option value="{{ category.category_name }}">{{ category.category_name.capitalize() }}</option>
-                                {% endif %}
-                            {% endfor %}
+                            {% if category.category_name == sneaker.category_name %}
+                                <option value="{{ category.category_name }}" selected>{{ category.category_name.capitalize() }}
+                                </option>
+                            {% else %}
+                                <option value="{{ category.category_name }}">{{ category.category_name.capitalize() }}</option>
+                            {% endif %}
+                        {% endfor %}
                     </select>
                     <label for="category_name">Sneaker Category</label>
                 </div>
@@ -32,7 +33,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-check-circle prefix"></i>
-                    <input id="shoe_name" name="shoe_name" value="{{ sneaker.shoe_name }}" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <input id="shoe_name" name="shoe_name" value="{{ sneaker.shoe_name }}" minlength="5" maxlength="50"
+                        type="text" class="validate" required>
                     <label for="shoe_name">Shoe Name</label>
                 </div>
             </div>
@@ -40,8 +42,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-check-circle prefix"></i>
-                    <input id="release_year" name="release_year" value="{{ sneaker.release_year }}" minlength="5" maxlength="50" type="number"
-                        class="validate" required>
+                    <input id="release_year" name="release_year" value="{{ sneaker.release_year }}" minlength="5"
+                        maxlength="50" type="number" class="validate" required>
                     <label for="release_year">Release Year</label>
                 </div>
             </div>
@@ -49,7 +51,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-check-circle prefix"></i>
-                    <textarea id="shoe_description" name="shoe_description" minlength="5" maxlength="200"
+                    <textarea id="shoe_description" name="shoe_description" minlength="5" maxlength="500"
                         class="materialize-textarea validate" required>{{ sneaker.shoe_description }}</textarea>
                     <label for="shoe_description">Shoe Description</label>
                 </div>
@@ -58,15 +60,19 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-check-circle prefix"></i>
-                    <input id="image_url" name="image_url" type="text" value="{{ sneaker.image_url }}" class="validate" required>
+                    <input id="image_url" name="image_url" type="text" value="{{ sneaker.image_url }}" class="validate"
+                        required>
                     <label for="image_url">Image Link</label>
                 </div>
             </div>
             <!-- Submit button -->
             <div class="row">
                 <div class="col s12 center-align">
-                    <button type="submit" class="buttons btn-large text-shadow">
-                        Edit Sneakers <i class="fas fa-edit"></i>
+                    <!-- Cancle button -->
+                    <a href="{{ url_for('get_sneakers') }}" class="btn red text-shadow">Cancel <i
+                            class="fas fa-times-circle right"></i></a>
+                    <button type="submit" class="btn black text-shadow">
+                        Edit <i class="fas fa-edit"></i>
                     </button>
                 </div>
             </div>

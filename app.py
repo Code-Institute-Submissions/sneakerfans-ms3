@@ -154,6 +154,20 @@ def add_sneakers():
 
 @app.route("/edit_sneakers/<sneaker_id>", methods=["GET", "POST"])
 def edit_sneakers(sneaker_id):
+    if request.method == "POST":
+        # Create dictionary to collect all form data
+        add = {
+            "category_name": request.form.get("category_name"),
+            "shoe_name": request.form.get("shoe_name"),
+            "release_year": request.form.get("release_year"),
+            "shoe_description": request.form.get("shoe_description"),
+            "image_url": request.form.get("image_url"),
+            "user": session["user"]
+        }
+        # Update mongodb sneakers collection
+        mongo.db.sneakers.update({"_id": ObjectId(sneaker_id)}, add)
+        flash("Your sneakers have been updated!")
+
     sneaker = mongo.db.sneakers.find_one({"_id": ObjectId(sneaker_id)})
 
     categories = mongo.db.categories.find().sort("category_name", 1)

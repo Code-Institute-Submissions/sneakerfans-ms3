@@ -152,6 +152,15 @@ def add_sneakers():
     return render_template("add-sneakers.html", categories=categories)
 
 
+@app.route("/edit_sneakers/<sneaker_id>", methods=["GET", "POST"])
+def edit_sneakers(sneaker_id):
+    sneaker = mongo.db.sneakers.find_one({"_id": ObjectId(sneaker_id)})
+
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template(
+        "edit-sneakers.html", sneaker=sneaker, categories=categories)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

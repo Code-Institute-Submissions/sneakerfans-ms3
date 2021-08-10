@@ -97,6 +97,7 @@ span {
   color: red;
 }
 
+/* Flash messages */
 .flashes {
   margin-top: 55px;
 }
@@ -105,10 +106,12 @@ span {
   margin: auto;
 }
 
+/* Profile page heading */
 .profile {
   margin: auto;
 }
  
+/* Full-info page styles */
 .full-image {
   max-height: 450px;
   object-fit: cover;
@@ -128,6 +131,7 @@ strong {
   font-size: 18px;
 }
 
+/* All-sneakers Search box */
 .search-box {
   margin-bottom: 55px;
 }
@@ -136,6 +140,7 @@ strong {
   margin-top: 35px;
 }
 
+/* Shoe name on image cards */
 .shoe-name {
   color: #ff7f00;
 }

@@ -35,6 +35,15 @@
                 {{ sneaker.date_added }}
             </p>
         </div>
+
+        <!-- Only show edit and delete buttons if the sneakers belong to logged in user -->
+        {% if session.user == sneaker.user %}
+            <div class="col s12 m4 search-go">
+                <a href="" class="black btn text-shadow">Edit</a>
+                <a href="" class="red btn text-shadow">Delete</a>
+            </div>
+        {% endif %}
+
     </div>
 </div>
 

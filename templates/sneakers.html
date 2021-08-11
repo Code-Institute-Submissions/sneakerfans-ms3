@@ -17,7 +17,7 @@
     <!-- Loop over all items from .sneakers collection using .find -->
     <div class="row">
         {% for sneaker in sneakers %}
-            <div class="col s12 m3 l4">
+            <div class="card-fixed col s12 m3 l4">
                 <a href="{{ url_for('full_info', sneaker_id=sneaker._id) }}">
                     <div class="card tooltipped" data-position="top" data-tooltip="Click for more info">
                         <div class="card-image waves-effect waves-block waves-light">

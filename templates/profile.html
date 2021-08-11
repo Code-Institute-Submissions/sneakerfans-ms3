@@ -23,7 +23,7 @@
     <div class="row">
         {% for sneaker in sneakers %}
             {% if session.user|lower == sneaker.user %}
-                <div class="col s12 m3 l4">
+                <div class="card-fixed col s12 m3 l4">
                     <a href="{{ url_for('full_info', sneaker_id=sneaker._id) }}">
                         <div class="card tooltipped" data-position="top" data-tooltip="Click to edit">
                             <div class="card-image waves-effect waves-block waves-light">

@@ -98,8 +98,8 @@ span {
   object-fit: cover;
 }
 
-.card-content a {
-  color: red;
+.card-fixed {
+  max-height: 380px !important;
 }
 
 /* Flash messages */

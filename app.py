@@ -175,6 +175,13 @@ def edit_sneakers(sneaker_id):
         "edit-sneakers.html", sneaker=sneaker, categories=categories)
 
 
+@app.route("/delete_sneakers/<sneaker_id>")
+def delete_sneakers(sneaker_id):
+    mongo.db.sneakers.remove({"_id": ObjectId(sneaker_id)})
+    flash("Sneakers successfully deleted")
+    return redirect(url_for("get_sneakers"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

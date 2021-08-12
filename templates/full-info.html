@@ -40,7 +40,9 @@
         <div id="modal1" class="modal">
             <div class="modal-content">
                 <h4 class="center-align">Are You Sure?</h4>
-                <p class="center-align">This step cannot be undone</p>
+                </div>
+                <div class="center-align">
+                <img src="{{url_for('static', filename='images/jumpman.png')}}" alt="">
             </div>
             <div class="modal-footer">
                 <a href="{{ url_for('get_sneakers') }}" class="btn red text-shadow">Cancel <i

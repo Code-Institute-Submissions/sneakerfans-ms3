@@ -143,6 +143,12 @@ def add_sneakers():
             "image_url": request.form.get("image_url"),
             "user": session["user"]
         }
+
+        existing_sneaker = mongo.db.sneakers.find_one(add)
+
+        if existing_sneaker:
+            flash("Sneakers already added! Try again")
+            return redirect(url_for("add_sneakers"))
         # Insert all form data to mongodb sneakers collection
         mongo.db.sneakers.insert_one(add)
         flash("Your sneakers have been added!")

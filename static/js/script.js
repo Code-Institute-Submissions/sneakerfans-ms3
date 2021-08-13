@@ -7,6 +7,9 @@ $(document).ready(function () {
     $('.tooltipped').tooltip();
     $('select').formSelect();
     $('.modal').modal();
+    $("#alert-close").click(function () {
+        $("#form-alert").hide("fade");
+    });
 
     // Stop form icons from changing color when inputs are clicked
     $("input").on("click", function () {

@@ -22,6 +22,7 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+# Home page
 @app.route("/get_sneakers")
 def get_sneakers():
     # Find all sneakers in database
@@ -29,6 +30,7 @@ def get_sneakers():
     return render_template("sneakers.html", sneakers=sneakers)
 
 
+# Browse collection page
 @app.route("/all_sneakers")
 def all_sneakers():
     # Find all sneakers in database
@@ -36,6 +38,7 @@ def all_sneakers():
     return render_template("all-sneakers.html", sneakers=sneakers)
 
 
+# Sneaker description page
 @app.route("/full_info/<sneaker_id>")
 def full_info(sneaker_id):
     # Find specific sneakers from collection using primary id
@@ -45,6 +48,7 @@ def full_info(sneaker_id):
         "full-info.html", sneaker=sneaker, categories=categories)
 
 
+# Search box
 @app.route("/search", methods=["GET", "POST"])
 def search():
     # Retrieve user query from search form
@@ -90,12 +94,10 @@ def login():
         if existing_user:
             # Make sure password input matches database password
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome back, {}!".format(
-                        request.form.get("username")))
-                    return redirect(url_for(
-                        "profile", username=session["user"]))
+                    existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome back, {}!".format(request.form.get("username")))
+                return redirect(url_for("profile", username=session["user"]))
             else:
                 # Password does not match
                 flash("Incorrect password and/or username")
@@ -109,6 +111,7 @@ def login():
     return render_template("login.html")
 
 
+# My sneakers page
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     sneakers = list(mongo.db.sneakers.find())
@@ -123,6 +126,7 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+# Log out
 @app.route("/logout")
 def logout():
     # Remove user from session cookies
@@ -131,6 +135,7 @@ def logout():
     return redirect(url_for("login"))
 
 
+# Add sneakers form
 @app.route("/add_sneakers", methods=["GET", "POST"])
 def add_sneakers():
     if request.method == "POST":
@@ -144,11 +149,14 @@ def add_sneakers():
             "user": session["user"]
         }
 
-        existing_sneaker = mongo.db.sneakers.find_one(add)
+        # Check if shoe name already exists in database
+        existing_sneaker = mongo.db.sneakers.find_one(
+            {"shoe_name": request.form.get("shoe_name").lower()})
 
         if existing_sneaker:
-            flash("Sneakers already added! Try again")
+            flash("Sneakers already added! Try a different sneaker")
             return redirect(url_for("add_sneakers"))
+
         # Insert all form data to mongodb sneakers collection
         mongo.db.sneakers.insert_one(add)
         flash("Your sneakers have been added!")
@@ -158,6 +166,7 @@ def add_sneakers():
     return render_template("add-sneakers.html", categories=categories)
 
 
+# Edit sneakers form
 @app.route("/edit_sneakers/<sneaker_id>", methods=["GET", "POST"])
 def edit_sneakers(sneaker_id):
     if request.method == "POST":
@@ -170,6 +179,15 @@ def edit_sneakers(sneaker_id):
             "image_url": request.form.get("image_url"),
             "user": session["user"]
         }
+
+        # Check if shoe name already exists in database
+        existing_sneaker = mongo.db.sneakers.find_one(
+            {"shoe_name": request.form.get("shoe_name").lower()})
+
+        if existing_sneaker:
+            flash("Sneakers already added! Try a different sneaker")
+            return redirect(url_for("get_sneakers"))
+
         # Update mongodb sneakers collection
         mongo.db.sneakers.update({"_id": ObjectId(sneaker_id)}, add)
         flash("Your sneakers have been updated!")
@@ -181,6 +199,7 @@ def edit_sneakers(sneaker_id):
         "edit-sneakers.html", sneaker=sneaker, categories=categories)
 
 
+# Delete sneakers
 @app.route("/delete_sneakers/<sneaker_id>")
 def delete_sneakers(sneaker_id):
     mongo.db.sneakers.remove({"_id": ObjectId(sneaker_id)})

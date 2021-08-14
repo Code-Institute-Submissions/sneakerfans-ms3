@@ -1,15 +1,19 @@
 /*
     jQuery for MaterializeCSS initialization
 */
-
 $(document).ready(function () {
     $(".sidenav").sidenav({edge: "right"});
     $('.tooltipped').tooltip();
     $('select').formSelect();
     $('.modal').modal();
     $("#alert-close").click(function () {
-        $("#form-alert").hide("fade");
+    $("#form-alert").hide("fade");
     });
+
+    // Auto close flash messages
+    $(function() { setTimeout(function() { 
+    $("#form-alert").hide(1000) }, 3000); });
+  
 
     // Stop form icons from changing color when inputs are clicked
     $("input").on("click", function () {

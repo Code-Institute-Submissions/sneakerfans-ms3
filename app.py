@@ -26,8 +26,11 @@ mongo = PyMongo(app)
 # Home page
 @app.route("/get_sneakers")
 def get_sneakers():
-    # Find all sneakers in database
-    sneakers = list(mongo.db.sneakers.find())
+    # Show 6 random documents from sneakers collection
+    # Credit:
+    # https://stackoverflow.com/questions/2824157/random-record-from-mongodb
+    sneakers = mongo.db.sneakers.aggregate(
+        [{"$sample": {"size": 6}}])
     return render_template("sneakers.html", sneakers=sneakers)
 
 
@@ -179,16 +182,9 @@ def edit_sneakers(sneaker_id):
             "release_year": request.form.get("release_year"),
             "shoe_description": request.form.get("shoe_description"),
             "image_url": request.form.get("image_url"),
+            "date_added": datetime.today().replace(microsecond=0),
             "user": session["user"]
         }
-
-        # Check if shoe name already exists in database
-        existing_sneaker = mongo.db.sneakers.find_one(
-            {"shoe_name": request.form.get("shoe_name").lower()})
-
-        if existing_sneaker:
-            flash("Sneakers already added! Try a different sneaker")
-            return redirect(url_for("get_sneakers"))
 
         # Update mongodb sneakers collection
         mongo.db.sneakers.update({"_id": ObjectId(sneaker_id)}, add)

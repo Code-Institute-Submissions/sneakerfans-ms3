@@ -111,6 +111,10 @@ span {
   margin: auto;
 }
 
+.flash-close {
+  color: black;
+}
+
 /* Profile page heading */
 .profile {
   margin: auto;

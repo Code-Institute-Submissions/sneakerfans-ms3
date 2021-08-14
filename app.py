@@ -5,6 +5,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from datetime import datetime
 if os.path.exists("env.py"):
     import env
 
@@ -146,6 +147,7 @@ def add_sneakers():
             "release_year": request.form.get("release_year"),
             "shoe_description": request.form.get("shoe_description"),
             "image_url": request.form.get("image_url"),
+            "date_added": datetime.today().replace(microsecond=0),
             "user": session["user"]
         }
 

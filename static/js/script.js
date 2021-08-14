@@ -12,7 +12,7 @@ $(document).ready(function () {
 
     // Auto close flash messages
     $(function() { setTimeout(function() { 
-    $("#form-alert").hide(1000) }, 3000); });
+    $("#form-alert").hide(1000) }, 2000); });
   
 
     // Stop form icons from changing color when inputs are clicked

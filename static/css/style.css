@@ -52,6 +52,13 @@ span {
   color: black;
 }
 
+hr {
+  height: 2px;
+  width: 25%;
+  background-color: black;
+  margin-bottom: 45px;
+}
+
 /* Sign up and Login user redirect link text */
 .guide-user {
   color: red;

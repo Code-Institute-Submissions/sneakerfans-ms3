@@ -112,7 +112,7 @@ def login():
             flash("Incorrect password and/or username")
             return redirect(url_for("login"))
 
-    return render_template("404.html")
+    return render_template("login.html")
 
 
 # My sneakers page
@@ -203,6 +203,14 @@ def delete_sneakers(sneaker_id):
     mongo.db.sneakers.remove({"_id": ObjectId(sneaker_id)})
     flash("Sneakers successfully deleted")
     return redirect(url_for("get_sneakers"))
+
+
+# 404 error page
+# Credit: https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/
+@app.errorhandler(404)
+def page_not_found(e):
+    # Show user error page
+    return render_template('404.html'), 404
 
 
 if __name__ == "__main__":

@@ -31,7 +31,7 @@ def get_sneakers():
     # https://stackoverflow.com/questions/2824157/random-record-from-mongodb
     sneakers = mongo.db.sneakers.aggregate(
         [{"$sample": {"size": 6}}])
-    return render_template("sneakers.html", sneakers=sneakers)
+    return render_template("sneakers.html", sneakers=sneakers, title="Home")
 
 
 # Browse collection page
@@ -112,7 +112,7 @@ def login():
             flash("Incorrect password and/or username")
             return redirect(url_for("login"))
 
-    return render_template("login.html")
+    return render_template("404.html")
 
 
 # My sneakers page

@@ -31,7 +31,7 @@ def get_sneakers():
     # https://stackoverflow.com/questions/2824157/random-record-from-mongodb
     sneakers = mongo.db.sneakers.aggregate(
         [{"$sample": {"size": 6}}])
-    return render_template("sneakers.html", sneakers=sneakers, title="Home")
+    return render_template("sneakers.html", sneakers=sneakers)
 
 
 # Browse collection page

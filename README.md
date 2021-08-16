@@ -88,7 +88,7 @@ A website/app that offers users to sign up/ Login/ Read data from other users/ W
 1. Sign up form.
 1. Log in form.
 1. User edit form. 
-1. User delete funcitonality.
+1. User delete functionality.
 1. Clickable image cards to show full sneaker descriptons
 1. Search functionality to browse the entire database.
 1. Call to action buttons based on information hierarchy.
@@ -105,7 +105,7 @@ A website/app that offers users to sign up/ Login/ Read data from other users/ W
 ### How we will achieve these requirements:
 1. By adding collections to the mongodb database that the user can access through forms.
 1. By adding attractive image cards and simple styling.
-1. By implementing appropriate user forms form.
+1. By implementing appropriate user forms.
 1. By implementing access to parts of the site otherwise hidden for non registered users.
 1. Appropriate social links in the footer.
 1. Using an attractive hero image and branding on the home page and show a selecting of fan favourite sneakers.

@@ -62,7 +62,7 @@ A website/app that offers users to sign up/ Login/ Read data from other users/ W
 
 ### What users can expect:
 1. An easy to navigate no fuss website that is pleasant to use.
-1. Easy to sign up quickly and starting browsing and adding data to the website.
+1. Easy to sign up quickly and begin browsing and adding data to the website.
 1. The ability to edit and delete uploads to their own profile.
 1. The ability to read and learn about rare sneakers uploaded to the database by other users.
 
@@ -70,7 +70,7 @@ A website/app that offers users to sign up/ Login/ Read data from other users/ W
 1. A simple sign up form 
 1. A simple log in form 
 1. A clean profile page
-1. A home page that shows 6 random collections from the database so users can see a fresh content each time they log in.
+1. A home page that shows 6 random collections from the database so users can see fresh content each time they log in.
 1. A simple user edit form 
 1. Give users the ability to delete their own data
 1. A search box to allow users to enter keywords based on database key values so users can browse the entire database efficiently
@@ -81,3 +81,31 @@ A website/app that offers users to sign up/ Login/ Read data from other users/ W
 1. Familar simple navigation
 1. Lots of great information on rare sneakers 
 
+
+## Scope:
+
+### Features for this release:
+1. Sign up form.
+1. Log in form.
+1. User edit form. 
+1. User delete funcitonality.
+1. Clickable image cards to show full sneaker descriptons
+1. Search functionality to browse the entire database.
+1. Call to action buttons based on information hierarchy.
+1. Social media links.
+
+### User requirements:
+1. The ability to read and learn about rare sneakers
+1. The ability to create content and add to the website database.
+1. The ability to edit content belonging to that user.
+1. The ability to delete content belonging to that user.
+1. The ability to follow the brand on social media. 
+1. The ability to view images.
+
+### How we will achieve these requirements:
+1. By adding collections to the mongodb database that the user can access through forms.
+1. By adding attractive image cards and simple styling.
+1. By implementing appropriate user forms form.
+1. By implementing access to parts of the site otherwise hidden for non registered users.
+1. Appropriate social links in the footer.
+1. Using an attractive hero image and branding on the home page and show a selecting of fan favourite sneakers.

@@ -9,12 +9,17 @@ There is also the opportunity for businesses to to able to sign up for a fee and
 I grew up playing basketball as a teenager in the Michael Air Jordan era of the 1990's. There is no feeling like that of opening a new pair of Air Jordans and to this day decades later I still collect basketball sneakers. 1990s retro releases are my favourites. When I was brainstorming ideas for this milestone project a sneaker database was a no brainer for me. It is a site I would use if it existed and seeing what ideas other users have on sneakers would keep me coming back daily.
 
 I have always loved the simplicity of the Nike website black and white are the main themes and the sneakers do the talking so there are no other distractions or gimmicks. SNEAKERFANS is heavily influenced by the [Nike](https://www.nike.com/ie/) website. 
-I did not use an fancy fonts or background colors and opted to use the default sans serif font and white page body with a black navigation bar and footer to see how nice I could make the site while just using the basics. Black and white is the main theme with some dashes of red and orange text. These are prominent themes in some of the most classic sneaker colorways. Such as the holy grail of all retro sneakers [Air Jordan 3](https://sneakernews.com/wp-content/uploads/2021/05/Air-Jordan-3-Cardinal-2022.jpg)
+I did not use any fancy fonts or background colors and opted to use the default sans serif font and white page body with a black navigation bar and footer to see how nice I could make the site while just using the basics. Black and white is the main theme with some dashes of red and orange text. These are prominent themes in some of the most classic sneaker colorways. Such as the holy grail of all retro sneakers The [Air Jordan 3](https://sneakernews.com/wp-content/uploads/2021/05/Air-Jordan-3-Cardinal-2022.jpg)
+
+The website uses HTML and CSS and Javascript in the front end. With my main css framework library being materialize.css and my Javacript framework is jquery cdn. I have also incorporated the use of the font awesome icons cdn for all icons. In the backend flask is used and jinja templating is used to inject data to the HTML. My chosen database is MongoDB.
 
 ## [View Live Project](https://ms3-sneakerfans.herokuapp.com/)
 ![SNEAKERFANS](static/images/responsive.png)
 
 ## Wireframes:
+My initial wireframes and database schemas were sketched on paper and when I was happy I was going in the correct direction I used [Balsamiq](https://balsamiq.com/wireframes/) to finalise my mockups for the front end. For my database schema I used [db diagram](https://dbdiagram.io/). 
+The main inspiration for my website is from the global sneaker giant [nike.com](https://www.nike.com/ie/).  All wireframes can be seen in the links below.
+
 * [Home Not Logged In](wireframes/home1.png)
 * [Home Logged In](wireframes/home2.png)
 * [Browse Collection](wireframes/browse.png)

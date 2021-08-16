@@ -1,7 +1,7 @@
 import os
 from flask import (
     Flask, flash, render_template,
-    redirect, request, session, url_for)
+    redirect, request, session, url_for, abort)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -45,8 +45,10 @@ def all_sneakers():
 # Sneaker description page
 @app.route("/full_info/<sneaker_id>")
 def full_info(sneaker_id):
+    if not is_object_id_valid(sneaker_id):
+        abort(400)
     # Find specific sneakers from collection using primary id
-    sneaker = mongo.db.sneakers.find_one({"_id": ObjectId(sneaker_id)})
+    sneaker = mongo.db.sneakers.find_one_or_404({"_id": ObjectId(sneaker_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template(
         "full-info.html", sneaker=sneaker, categories=categories)
@@ -118,14 +120,15 @@ def login():
 # My sneakers page
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    sneakers = list(mongo.db.sneakers.find())
-    # Retrieve active username from database
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+    if is_authenticated():
+        sneakers = list(mongo.db.sneakers.find())
+        # Retrieve active username from database
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
 
-    if session["user"]:
-        return render_template(
-            "profile.html", username=username, sneakers=sneakers)
+        if session["user"]:
+            return render_template(
+                "profile.html", username=username, sneakers=sneakers)
 
     return redirect(url_for("login"))
 
@@ -211,6 +214,30 @@ def delete_sneakers(sneaker_id):
 def page_not_found(e):
     # Show user error page
     return render_template('404.html'), 404
+
+
+@app.errorhandler(400)
+def bad_request(e):
+    # Show user error page
+    return render_template('404.html'), 400
+
+
+# @app.errorhandler(Exception)
+# def internal_server_error(e):
+#     # Show user error page
+#     return render_template('404.html'), 500
+
+
+def is_object_id_valid(id_value):
+    """ Validate is the id_value is a valid ObjectId
+    """
+    return id_value != "" and ObjectId.is_valid(id_value)
+
+
+def is_authenticated():
+    """ Ensure that user is authenticated
+    """
+    return 'user' in session
 
 
 if __name__ == "__main__":

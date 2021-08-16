@@ -38,6 +38,46 @@ The main inspiration for my website is from the global sneaker giant [nike.com](
 
 2. **As a sneaker collector I would like to add images and descriptions of my collection for others to see**
 
-3. **As the website owner I would like to create a community of sneaker lovers who can share images and information on popular and extremely rare sneakers**
+3. **As the website owner I would like to create a community of sneaker lovers who can share images and information on popular and extremely rare sneakers. I would also like to create a revenue stream to keep growing the site from advertising from sneaker brands**
 
 4. **As a sneaker retailer I would like to log into a website that allows me to see what sneakers are currently fan favourites so we can stock up on popular items to increase profits**
+
+## Strategy:
+### What am I making?
+A website/app that offers users to sign up/ Login/ Read data from other users/ Write data to the database/ view, edit and delete their own content on their profile page. The site will create a sneaker community while also allowing businesses to see what styles are most popular to increase revenue.
+
+### Website business goals:
+1. Create a community of sneakerfans 
+1. Allow businesses to sign up for a monthly fee to collect data and feedback on users sneaker preferences 
+1. Increase social media and website traffic with the aim of creating revenue from advertising from the major sneaker brands.
+
+### Website target audience:
+1. Sneaker lovers and collectors
+1. Sneaker resellers
+1. Sneaker retailers
+
+### User value:
+1. Sneaker lovers and collectors will gain a positive emotional experience from using the site and they can search the entire database to find retro sneakers they had forgotton about that will bring back memories and also encourage them to upload their own favourite sneakers.
+1. Retailers and resellers can see exactly what sneakers are the most popular and at what times of the year they need to stock up on popular items to increase their revenue.
+
+### What users can expect:
+1. An easy to navigate no fuss website that is pleasant to use.
+1. Easy to sign up quickly and starting browsing and adding data to the website.
+1. The ability to edit and delete uploads to their own profile.
+1. The ability to read and learn about rare sneakers uploaded to the database by other users.
+
+### What is worth doing:
+1. A simple sign up form 
+1. A simple log in form 
+1. A clean profile page
+1. A home page that shows 6 random collections from the database so users can see a fresh content each time they log in.
+1. A simple user edit form 
+1. Give users the ability to delete their own data
+1. A search box to allow users to enter keywords based on database key values so users can browse the entire database efficiently
+
+### What makes it a good experience:
+1. Simple outlay. 
+1. clean images placed in materilize image cards of the same heights.
+1. Familar simple navigation
+1. Lots of great information on rare sneakers 
+

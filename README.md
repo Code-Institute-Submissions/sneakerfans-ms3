@@ -155,3 +155,16 @@ in the form of a new user registering an account.
 1. Image cards of fixed height.
 1. Call to action buttons and links to encourage a sign up. 
 1. Social media links.
+
+## Surface
+
+### Colors:
+The website is inspired by [Nike](https://www.nike.com/ie/). I always loved the simplicity of their website. I set out to try and make the website as enticing as possible while using as little styling as possible. I stuck with the basic sans serif font and white body background. My navbar and footer are also black with white text. The image cards text have some orange colors and sign up links are red. These colors are inspired by both the nike website and one the most iconic sneakers of all time
+The [Air Jordan 3](https://sneakernews.com/wp-content/uploads/2021/05/Air-Jordan-3-Cardinal-2022.jpg).
+
+### Fonts:
+For all fonts I kept things simple with the default sans serif. I added some underlines to my page headings and the simplicity seems to suit the syle I wanted for the website.
+
+### Images: 
+The home page uses a hero image of a pair of Air Jordan Sneakers on feet. The image is clean and
+emotive and sets the tone for the website. All images come from database entries from users. I have created neat materialize cards of fixed height to display all images with continuity. When the image cards are clicked the user is brought to the full sneaker description page where they can view a larger image of the sneaker. I used some box shadow to help this image pop a little.

@@ -139,6 +139,9 @@ def profile(username):
 # Log out
 @app.route("/logout")
 def logout():
+    # If user is not authenticated redirect 400
+    if not is_authenticated():
+        abort(400)
     # Remove user from session cookies
     flash("You have successfully logged out")
     session.pop("user")
@@ -148,30 +151,32 @@ def logout():
 # Add sneakers form
 @app.route("/add_sneakers", methods=["GET", "POST"])
 def add_sneakers():
-    if request.method == "POST":
-        # Create dictionary to collect all form data
-        add = {
-            "category_name": request.form.get("category_name"),
-            "shoe_name": request.form.get("shoe_name"),
-            "release_year": request.form.get("release_year"),
-            "shoe_description": request.form.get("shoe_description"),
-            "image_url": request.form.get("image_url"),
-            "date_added": datetime.today().replace(microsecond=0),
-            "user": session["user"]
-        }
+    # Check if user is authenticated
+    if is_authenticated():
+        if request.method == "POST":
+            # Create dictionary to collect all form data
+            add = {
+                "category_name": request.form.get("category_name"),
+                "shoe_name": request.form.get("shoe_name"),
+                "release_year": request.form.get("release_year"),
+                "shoe_description": request.form.get("shoe_description"),
+                "image_url": request.form.get("image_url"),
+                "date_added": datetime.today().replace(microsecond=0),
+                "user": session["user"]
+            }
 
-        # Check if shoe name already exists in database
-        existing_sneaker = mongo.db.sneakers.find_one(
-            {"shoe_name": request.form.get("shoe_name").lower()})
+            # Check if shoe name already exists in database
+            existing_sneaker = mongo.db.sneakers.find_one(
+                {"shoe_name": request.form.get("shoe_name").lower()})
 
-        if existing_sneaker:
-            flash("Sneakers already added! Try a different sneaker")
-            return redirect(url_for("add_sneakers"))
+            if existing_sneaker:
+                flash("Sneakers already added! Try a different sneaker")
+                return redirect(url_for("add_sneakers"))
 
-        # Insert all form data to mongodb sneakers collection
-        mongo.db.sneakers.insert_one(add)
-        flash("Your sneakers have been added!")
-        return redirect(url_for("get_sneakers"))
+            # Insert all form data to mongodb sneakers collection
+            mongo.db.sneakers.insert_one(add)
+            flash("Your sneakers have been added!")
+            return redirect(url_for("get_sneakers"))
     # Create categories variable to alphabetically sort html select
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add-sneakers.html", categories=categories)
@@ -180,24 +185,26 @@ def add_sneakers():
 # Edit sneakers form
 @app.route("/edit_sneakers/<sneaker_id>", methods=["GET", "POST"])
 def edit_sneakers(sneaker_id):
-    # Check if object id is valid
-    if not is_object_id_valid(sneaker_id):
-        abort(400)
-    if request.method == "POST":
-        # Create dictionary to collect all form data
-        add = {
-            "category_name": request.form.get("category_name"),
-            "shoe_name": request.form.get("shoe_name"),
-            "release_year": request.form.get("release_year"),
-            "shoe_description": request.form.get("shoe_description"),
-            "image_url": request.form.get("image_url"),
-            "date_added": datetime.today().replace(microsecond=0),
-            "user": session["user"]
-        }
+    # Check if user is authenticated
+    if is_authenticated():
+        # Check if object id is valid
+        if not is_object_id_valid(sneaker_id):
+            abort(400)
+        if request.method == "POST":
+            # Create dictionary to collect all form data
+            add = {
+                "category_name": request.form.get("category_name"),
+                "shoe_name": request.form.get("shoe_name"),
+                "release_year": request.form.get("release_year"),
+                "shoe_description": request.form.get("shoe_description"),
+                "image_url": request.form.get("image_url"),
+                "date_added": datetime.today().replace(microsecond=0),
+                "user": session["user"]
+            }
 
-        # Update mongodb sneakers collection
-        mongo.db.sneakers.update({"_id": ObjectId(sneaker_id)}, add)
-        flash("Your sneakers have been updated!")
+            # Update mongodb sneakers collection
+            mongo.db.sneakers.update({"_id": ObjectId(sneaker_id)}, add)
+            flash("Your sneakers have been updated!")
 
     sneaker = mongo.db.sneakers.find_one_or_404({"_id": ObjectId(sneaker_id)})
 
@@ -209,12 +216,15 @@ def edit_sneakers(sneaker_id):
 # Delete sneakers
 @app.route("/delete_sneakers/<sneaker_id>")
 def delete_sneakers(sneaker_id):
-    # Check if object id is valid
-    if not is_object_id_valid(sneaker_id):
-        abort(400)
-    mongo.db.sneakers.remove({"_id": ObjectId(sneaker_id)})
-    flash("Sneakers successfully deleted")
-    return redirect(url_for("get_sneakers"))
+    # Check if user is authenticated
+    if is_authenticated():
+        # Check if object id is valid
+        if not is_object_id_valid(sneaker_id):
+            abort(400)
+        mongo.db.sneakers.remove({"_id": ObjectId(sneaker_id)})
+        flash("Sneakers successfully deleted")
+        return redirect(url_for("get_sneakers"))
+    flash("You must be a user to delete sneakers")
 
 
 # 404 error page

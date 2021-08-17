@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,7 +38,8 @@
 
                         <!-- Show nav elements based on whether user is logged in or logged out -->
                         {% if session.user %}
-                            <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="fas fa-user"></i> My Sneakers</a></li>
+                            <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="fas fa-user"></i>
+                                    My Sneakers</a></li>
                             <li><a href="{{ url_for('add_sneakers') }}">Add Sneakers</a></li>
                             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                         {% else %}
@@ -50,8 +52,10 @@
         </div>
 
         <!-- mobile sidenav -->
-		<ul class="sidenav" id="mobile-demo">
-            <li><h4 class="center-align">SNEAKERFANS</h4></li>
+        <ul class="sidenav" id="mobile-demo">
+            <li>
+                <h4 class="center-align">SNEAKERFANS</h4>
+            </li>
             <li><a href="{{ url_for('get_sneakers') }}">Home</a></li>
             <li><a href="{{ url_for('all_sneakers') }}">Browse Collection</a></li>
             <!-- Show nav elements based on whether user is logged in or logged out -->
@@ -73,7 +77,8 @@
                 {% for message in messages %}
                 <div class="container">
                     <div class="row flashes card-panel" id="form-alert">
-                        <a href="#" id="alert-close" class="close"><i class="flash-close far fa-times-circle right"></i></a>
+                        <a href="#" id="alert-close" class="close"><i
+                                class="flash-close far fa-times-circle right"></i></a>
                         <h4 class="center-align">{{ message }}</h4>
                     </div>
                 </div>
@@ -92,6 +97,7 @@
         <div class="container">
             <div class="row">
                 <div class="col s12">
+                    <!-- Social links -->
                     <ul class="center-align">
                         <li><a class="white-text" href="https://www.facebook.com/" target="_blank" rel="noreferrer"><i
                                     class="fab fa-facebook-square" aria-hidden="true"></i><span
@@ -108,6 +114,7 @@
                     </ul>
                 </div>
             </div>
+            <!-- Copyright -->
             <div class="footer-copyright">
                 <div class="container center-align white-text">
                     © 2021 Copyright SNEAKERFANS

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="row hero-home">
+<div class="row hero-home" title="Air Jordan 3 sneakers">
     <div class="hero-cta col s12 m12 l8 offset-l2 center-align">
         <a href="{{ url_for('sign_up') }}" type="submit"
             class="cta buttons col s6 offset-s3 m4 offset-m4 btn-large text-shadow white-text">Join Us</a>
@@ -14,41 +14,42 @@
         <hr>
     </div>
 </div>
-    
-    <!-- Loop over all items from .sneakers collection using .find -->
-    <div class="row">
-        {% for sneaker in sneakers %}
-            <div class="card-fixed col s12 m3 l4">
-                <a href="{{ url_for('full_info', sneaker_id=sneaker._id) }}">
-                    <div class="card tooltipped" data-position="top" data-tooltip="Click for more info">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <!-- Show image from database -->
-                            <img class="activator" src="{{ sneaker.image_url }}">
-                        </div>
-                        <div class="card-content">
-                            <!-- Show title, shoename and user from database -->
-                            <span class="card-title activator">{{ sneaker.category_name.capitalize() }}</span>
-                            <p class="shoe-name">{{ sneaker.shoe_name.title() }}</p>
-                            <p>Added by: <em>{{ sneaker.user }}</em></p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        {% endfor %}
-        </div>
 
-        <div class="container">
-            <div class="row">
-                <div class="col s12">
-                    <p class="center-align">
-                        <strong>Want to add your favourites?</strong>
-                    </p>
-                    <div class="col s12 center-align">
-                        <a class="guide-user" href="{{ url_for('sign_up') }}"><strong>Sign
-                                up now</strong></a>
+<!-- Loop over all items from .sneakers collection using .find -->
+<div class="row">
+    {% for sneaker in sneakers %}
+        <div class="card-fixed col s12 m3 l4">
+            <a href="{{ url_for('full_info', sneaker_id=sneaker._id) }}">
+                <span class="sr-only">Click image for more info</span>
+                <div class="card tooltipped" data-position="top" data-tooltip="Click for more info">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <!-- Show image from database -->
+                        <img class="activator" src="{{ sneaker.image_url }}" alt="Sneaker image">
+                    </div>
+                    <div class="card-content">
+                        <!-- Show title, shoename and user from database -->
+                        <span class="card-title activator">{{ sneaker.category_name.capitalize() }}</span>
+                        <p class="shoe-name">{{ sneaker.shoe_name.title() }}</p>
+                        <p>Added by: <em>{{ sneaker.user }}</em></p>
                     </div>
                 </div>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+<!-- Sign up link -->
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <p class="center-align">
+                <strong>Want to add your favourites?</strong>
+            </p>
+            <div class="col s12 center-align">
+                <a class="guide-user" href="{{ url_for('sign_up') }}"><strong>Sign
+                        up now</strong></a>
             </div>
         </div>
+    </div>
+</div>
 
 {% endblock %}

@@ -46,7 +46,6 @@ def all_sneakers():
 @app.route("/full_info/<sneaker_id>")
 def full_info(sneaker_id):
     # Check if object id is valid
-    # or call call 400 error handler
     if not is_object_id_valid(sneaker_id):
         abort(400)
     # Find specific sneakers from collection using primary id
@@ -123,6 +122,7 @@ def login():
 # My sneakers page
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+    # Check if user name is authenticated
     if is_authenticated():
         sneakers = list(mongo.db.sneakers.find())
         # Retrieve active username from database
@@ -180,6 +180,9 @@ def add_sneakers():
 # Edit sneakers form
 @app.route("/edit_sneakers/<sneaker_id>", methods=["GET", "POST"])
 def edit_sneakers(sneaker_id):
+    # Check if object id is valid
+    if not is_object_id_valid(sneaker_id):
+        abort(400)
     if request.method == "POST":
         # Create dictionary to collect all form data
         add = {
@@ -196,7 +199,7 @@ def edit_sneakers(sneaker_id):
         mongo.db.sneakers.update({"_id": ObjectId(sneaker_id)}, add)
         flash("Your sneakers have been updated!")
 
-    sneaker = mongo.db.sneakers.find_one({"_id": ObjectId(sneaker_id)})
+    sneaker = mongo.db.sneakers.find_one_or_404({"_id": ObjectId(sneaker_id)})
 
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template(
@@ -206,6 +209,9 @@ def edit_sneakers(sneaker_id):
 # Delete sneakers
 @app.route("/delete_sneakers/<sneaker_id>")
 def delete_sneakers(sneaker_id):
+    # Check if object id is valid
+    if not is_object_id_valid(sneaker_id):
+        abort(400)
     mongo.db.sneakers.remove({"_id": ObjectId(sneaker_id)})
     flash("Sneakers successfully deleted")
     return redirect(url_for("get_sneakers"))

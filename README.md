@@ -167,4 +167,8 @@ For all fonts I kept things simple with the default sans serif. I added some und
 
 ### Images: 
 The home page uses a hero image of a pair of Air Jordan Sneakers on feet. The image is clean and
-emotive and sets the tone for the website. All images come from database entries from users. I have created neat materialize cards of fixed height to display all images with continuity. When the image cards are clicked the user is brought to the full sneaker description page where they can view a larger image of the sneaker. I used some box shadow to help this image pop a little.
+emotive and sets the tone for the website. All images come from database entries from users. I have created neat materialize cards of fixed height to display all images with continuity. When the image cards are clicked the user is brought to the full sneaker description page where they can view a larger image of the sneaker. I used some box shadow to help this image pop a little. 
+I used photoshop to design the company logo.
+I also used photoshop for the error hanler pages and the are you sure you want to delete modal. 
+For these pages I used the Air Jordan Jumpman logo and replaced the basketball with an exclamation
+circle icon.

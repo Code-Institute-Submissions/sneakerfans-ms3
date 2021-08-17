@@ -109,3 +109,22 @@ A website/app that offers users to sign up/ Login/ Read data from other users/ W
 1. By implementing access to parts of the site otherwise hidden for non registered users.
 1. Appropriate social links in the footer.
 1. Using an attractive hero image and branding on the home page and show a selecting of fan favourite sneakers.
+
+## Structure:
+
+### Navigation
+I have implemented a multi page site. A user must sign up or log in to access certain pages
+of the website.
+Non account holders may access:
+1. Home
+1. Browse Collection
+1. Log In
+1. Sign Up
+1. The header also contains the company logo which has a return to home link.
+
+Account holders will gain additonal access to:
+1. My Sneakers - (profile page show all of users database entries)
+1. Add Sneakers - (form to allow user to write to database)
+1. Log Out
+
+I have used a fixed navigation bar to allow users to move to any other section from their current section. Navigation has been kept simple and obvious. There are also call to action buttons and text to encourage new visitors to create an account. 

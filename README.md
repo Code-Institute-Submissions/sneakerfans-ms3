@@ -128,3 +128,30 @@ Account holders will gain additonal access to:
 1. Log Out
 
 I have used a fixed navigation bar to allow users to move to any other section from their current section. Navigation has been kept simple and obvious. There are also call to action buttons and text to encourage new visitors to create an account. 
+
+## Skeleton:
+
+### Presentation
+1. Simple layout.
+1. Hero image on home page.
+1. Fixed navigation.
+1. Consistent layout and theme.
+
+### User conventional tools:
+1. Clear headings. 
+1. Clickable elements clearly labelled. 
+1. Easy to read nav bar. 
+1. Social media links in the form of clickable icons in the footer. 
+
+### Progressive disclosure:
+I have placed the priority content on the home page so the user sees this first.
+I have arranged the supporting content in order of priority in additional sections. 
+Each section links to the most important items to engage users and encourage a conversion
+in the form of a new user registering an account.
+
+### Elements that have priority:
+1. Navigation menu with fixed scrolling.
+1. Clickable logo with return to home link.
+1. Image cards of fixed height.
+1. Call to action buttons and links to encourage a sign up. 
+1. Social media links.

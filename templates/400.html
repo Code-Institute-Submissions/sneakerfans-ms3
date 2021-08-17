@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <h2 class="center-align">400......Oops!</h2>
+            <h4 class="center-align">Bad Request!</h4>
+        </div>
+        <div class="col s12 center-align">
+            <img src="{{url_for('static', filename='images/jumpman.png')}}" alt="Air Jordan Logo">
+        </div>
+        <div class="col s12 center-align">
+            <a href="{{ url_for('get_sneakers') }}" class="buttons btn-large Black text-shadow">Home <i
+                    class="fas fa-home"></i></a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

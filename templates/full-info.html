@@ -45,10 +45,10 @@
                 <img src="{{url_for('static', filename='images/jumpman.png')}}" alt="">
             </div>
             <div class="modal-footer">
-                <a href="{{ url_for('get_sneakers') }}" class="btn red text-shadow">Cancel <i
+                <a href="{{ url_for('get_sneakers') }}" class="btn red text-shadow">No <i
                         class="fas fa-times-circle right"></i></a>
                 <a href="{{ url_for('delete_sneakers', sneaker_id=sneaker._id) }}"
-                    class="modal-close black btn">Delete</a>
+                    class="modal-close black btn">Yes <i class="fas fa-check-circle"></i></a>
             </div>
         </div>
 

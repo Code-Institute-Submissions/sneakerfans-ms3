@@ -45,9 +45,12 @@ def all_sneakers():
 # Sneaker description page
 @app.route("/full_info/<sneaker_id>")
 def full_info(sneaker_id):
+    # Check if object id is valid
+    # or call call 400 error handler
     if not is_object_id_valid(sneaker_id):
         abort(400)
     # Find specific sneakers from collection using primary id
+    # if not found return a 404 redirect
     sneaker = mongo.db.sneakers.find_one_or_404({"_id": ObjectId(sneaker_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template(
@@ -216,24 +219,32 @@ def page_not_found(e):
     return render_template('404.html'), 404
 
 
+# 400 error page
+# Credit: Guido Cecilio mentor
 @app.errorhandler(400)
 def bad_request(e):
-    # Show user error page
-    return render_template('404.html'), 400
+    # Show bad request page
+    return render_template('400.html'), 400
 
 
-# @app.errorhandler(Exception)
-# def internal_server_error(e):
-#     # Show user error page
-#     return render_template('404.html'), 500
+# 500 error page
+# Credit: Guido Cecilio mentor
+@app.errorhandler(Exception)
+def internal_server_error(e):
+    # Show internal server/application error page
+    return render_template('500.html'), 500
 
 
+# Check if the id is a valid object in database
+# Credit: Guido Cecilio mentor
 def is_object_id_valid(id_value):
     """ Validate is the id_value is a valid ObjectId
     """
     return id_value != "" and ObjectId.is_valid(id_value)
 
 
+# Check if user is authenticated
+# Credit Guido Cecilio Mentor
 def is_authenticated():
     """ Ensure that user is authenticated
     """

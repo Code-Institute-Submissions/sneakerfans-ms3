@@ -89,7 +89,7 @@ A website/app that offers users to sign up/ Login/ Read data from other users/ W
 1. Log in form.
 1. User edit form. 
 1. User delete functionality.
-1. Clickable image cards to show full sneaker descriptons
+1. Clickable image cards to show full sneaker descriptions
 1. Search functionality to browse the entire database.
 1. Call to action buttons based on information hierarchy.
 1. Social media links.
@@ -108,7 +108,7 @@ A website/app that offers users to sign up/ Login/ Read data from other users/ W
 1. By implementing appropriate user forms.
 1. By implementing access to parts of the site otherwise hidden for non registered users.
 1. Appropriate social links in the footer.
-1. Using an attractive hero image and branding on the home page and show a selecting of fan favourite sneakers.
+1. Using an attractive hero image and branding on the home page and show a selection of fan favourite sneakers.
 
 ## Structure:
 
@@ -123,7 +123,7 @@ Non account holders may access:
 1. The header also contains the company logo which has a return to home link.
 
 Account holders will gain additonal access to:
-1. My Sneakers - (profile page show all of users database entries)
+1. My Sneakers - (profile page to show all of user's database entries)
 1. Add Sneakers - (form to allow user to write to database)
 1. Log Out
 
@@ -167,8 +167,8 @@ For all fonts I kept things simple with the default sans serif. I added some und
 
 ### Images: 
 The home page uses a hero image of a pair of Air Jordan Sneakers on feet. The image is clean and
-emotive and sets the tone for the website. All images come from database entries from users. I have created neat materialize cards of fixed height to display all images with continuity. When the image cards are clicked the user is brought to the full sneaker description page where they can view a larger image of the sneaker. I used some box shadow to help this image pop a little. 
+emotive and sets the tone for the website. All other images come from database entries from users. I have created neat materialize cards of fixed height to display all images with continuity. When the image cards are clicked the user is brought to the full sneaker description page where they can view a larger image of the sneaker. I used some box shadow to help this image pop a little. 
 I used photoshop to design the company logo.
-I also used photoshop for the error hanler pages and the are you sure you want to delete modal. 
+I also used photoshop for the error handler pages and the are you sure you want to delete modal. 
 For these pages I used the Air Jordan Jumpman logo and replaced the basketball with an exclamation
 circle icon.

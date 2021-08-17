@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="SNEAKERFANS brings together a community of sneaker lovers and collectors across the world. Sign up to create your own content">
     <link rel="icon" type="imgage/png" href="{{ url_for('static', filename='images/favicon.png') }}" sizes="512x512">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
         integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
@@ -24,11 +26,14 @@
                     <a href="{{ url_for('get_sneakers') }}" class="brand-logo">
                         <img src="{{url_for('static', filename='images/logo-white.png')}}" height="75"
                             alt="Sneakerfans logo">
+                        <span class="sr-only">Home</span>
                     </a>
-                    <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i>
+                        <span class="sr-only">Navigation Menu</span></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{{ url_for('get_sneakers') }}">Home</a></li>
-                        <li><a href="{{ url_for('all_sneakers') }}"><i class="fas fa-search"></i> Browse Collection</a></li>
+                        <li><a href="{{ url_for('all_sneakers') }}"><i class="fas fa-search" aria-hidden="true"></i>
+                                Browse Collection</a></li>
 
                         <!-- Show nav elements based on whether user is logged in or logged out -->
                         {% if session.user %}
@@ -88,10 +93,18 @@
             <div class="row">
                 <div class="col s12">
                     <ul class="center-align">
-                        <li><a class="white-text" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
-                        <li><a class="white-text" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square"></i></a></li>
-                        <li><a class="white-text" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
-                        <li><a class="white-text" href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube-square"></i></a></li>
+                        <li><a class="white-text" href="https://www.facebook.com/" target="_blank" rel="noreferrer"><i
+                                    class="fab fa-facebook-square" aria-hidden="true"></i><span
+                                    class="sr-only">Facebook</span></a></li>
+                        <li><a class="white-text" href="https://www.instagram.com/" target="_blank" rel="noreferrer"><i
+                                    class="fab fa-instagram-square" aria-hidden="true"></i><span
+                                    class="sr-only">Instagram</span></a></li>
+                        <li><a class="white-text" href="https://twitter.com/" target="_blank" rel="noreferrer"><i
+                                    class="fab fa-twitter-square" aria-hidden="true"></i><span
+                                    class="sr-only">Twitter</span></a></li>
+                        <li><a class="white-text" href="https://www.youtube.com/" target="_blank" rel="noreferrer"><i
+                                    class="fab fa-youtube-square" aria-hidden="true"></i><span
+                                    class="sr-only">YouTube</span></a></li>
                     </ul>
                 </div>
             </div>

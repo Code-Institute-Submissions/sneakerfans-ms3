@@ -172,3 +172,18 @@ I used photoshop to design the company logo.
 I also used photoshop for the error handler pages and the are you sure you want to delete modal. 
 For these pages I used the Air Jordan Jumpman logo and replaced the basketball with an exclamation
 circle icon.
+
+### Order and sequence:
+1. Navigation order Not logged in - Home/ Browse Collection/ Log In/ Sign Up
+1. Navigation order logged in - Home/ Browse Collection/ My Sneakers/ Add Sneakers/ Log Out
+1. Home page order - Hero image/ Call to action/ Heading/ Materialize image cards/ Sign Up link
+1. Browse Collection order - Heading/  Search Box/ Materialize image cards
+1. Log In order - Heading/ Form/ Username input/ Password input/ Submit button
+1. Sign Up order - Heading/ Form/ Username input/ Password input/ Submit button
+1. My Sneakers order - Heading/ Add Sneakers button link/ Materialize image cards
+1. Add Sneakers order - Heading/ Form/ Choose Category input/ Shoe Name input/ Release Year input/ Shoe Description input/ Image url input/ Submit button
+1. Footer section order - Social links/ copyright.
+
+### Other themes:
+1. Use of relevant font awesome icons to add a professional touch.
+1. Use of subtle shadows to lift some elements off the page.

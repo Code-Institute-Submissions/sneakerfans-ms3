@@ -197,3 +197,13 @@ footer li:hover {
   font-size: 150%;
 }
 
+/* Place eye icon in password field
+Credit: https://codepen.io/Sohail05/pen/yOpeBm */
+.field_icon {
+  float: right;
+  margin-left: -25px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}

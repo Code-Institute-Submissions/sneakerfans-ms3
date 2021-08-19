@@ -19,6 +19,18 @@ $(document).ready(function () {
     $("input").on("click", function () {
         $("i").css("color", "black");
     });
+
+    // Show and hide password
+    // Credit: W3schools
+    $(".field_icon").on("click", function () {
+        $(this).toggleClass("fa-eye-slash fa-eye");
+        var show = document.getElementById("password");
+        if (show.type === "password") {
+            show.type = "text";
+        } else {
+            show.type = "password";
+        }
+    });
     
     validateMaterializeSelect();
     function validateMaterializeSelect() {

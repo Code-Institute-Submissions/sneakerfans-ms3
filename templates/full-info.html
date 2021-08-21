@@ -10,7 +10,9 @@
 <!-- Sneaker info & image -->
 <div class="full row">
     <div class=" col s12 m5 l5">
-        <img class="full-image" src="{{ sneaker.image_url }}" alt="Sneaker Image">
+        <!-- Show image from database or backup from images folder -->
+        <img class="full-image" src="{{ sneaker.image_url }}" alt="Sneaker Image"
+            onerror="this.onerror=null;this.src='{{ url_for('static', filename='images/error-image.png') }}';">
     </div>
     <div class="col s12 m7 l7">
         <div class="full-text">

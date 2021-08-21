@@ -23,8 +23,9 @@
                 <span class="sr-only">Click image for more info</span>
                 <div class="card tooltipped" data-position="top" data-tooltip="Click for more info">
                     <div class="card-image waves-effect waves-block waves-light">
-                        <!-- Show image from database -->
-                        <img class="activator" src="{{ sneaker.image_url }}" alt="Sneaker image">
+                        <!-- Show image from database or backup from images folder -->
+                        <img class="activator" src="{{ sneaker.image_url }}" alt="Sneaker image"
+                            onerror="this.onerror=null;this.src='{{ url_for('static', filename='images/error-image.png') }}';">
                     </div>
                     <div class="card-content">
                         <!-- Show title, shoename and user from database -->

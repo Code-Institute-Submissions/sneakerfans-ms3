@@ -8,18 +8,16 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row manage">
     {% for category in categories %}
-        <div class="col s12 m3">
-            <div class="card blue-grey darken-1">
-                <div class="card-content white-text">
-                    <span class="card-title">{{ category.category_name.capitalize() }}</span>
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively.</p>
+        <div class="col s12 m3 l3">
+            <div class="card grey lighten-3">
+                <div class="center-align card-content white-text">
+                    <span class="card-title">{{ category.category_name.capitalize() }}</span> 
                 </div>
-                <div class="card-action">
-                    <a href="#">This is a link</a>
-                    <a href="#">This is a link</a>
+                <div class="card-action center-align">
+                    <a href="#" class="manage btn black text-shadow">Edit</a>
+                    <a href="#" class=" manage btn red text-shadow">Delete</a>
                 </div>
             </div>
         </div>

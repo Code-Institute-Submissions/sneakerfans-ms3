@@ -230,7 +230,9 @@ def delete_sneakers(sneaker_id):
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
-    return render_template("categories.html", categories=categories)
+    if session["user"] == "admin23".lower():
+        return render_template("categories.html", categories=categories)
+    return redirect(url_for("get_categories"))
 
 
 # 404 error page

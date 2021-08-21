@@ -227,6 +227,12 @@ def delete_sneakers(sneaker_id):
     flash("You must be a user to delete sneakers")
 
 
+@app.route("/get_categories")
+def get_categories():
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    return render_template("categories.html", categories=categories)
+
+
 # 404 error page
 # Credit: https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/
 @app.errorhandler(404)

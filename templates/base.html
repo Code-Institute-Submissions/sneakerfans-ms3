@@ -33,6 +33,7 @@
                         <span class="sr-only">Navigation Menu</span></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{{ url_for('get_sneakers') }}">Home</a></li>
+                        <li><a href="{{ url_for('get_categories') }}">Mange Categories</a></li>
                         <li><a href="{{ url_for('all_sneakers') }}"><i class="fas fa-search" aria-hidden="true"></i>
                                 Browse Collection</a></li>
 
@@ -57,6 +58,7 @@
                 <h4 class="center-align">SNEAKERFANS</h4>
             </li>
             <li><a href="{{ url_for('get_sneakers') }}">Home</a></li>
+            <li><a href="{{ url_for('get_categories') }}">Mange Categories</a></li>
             <li><a href="{{ url_for('all_sneakers') }}">Browse Collection</a></li>
             <!-- Show nav elements based on whether user is logged in or logged out -->
             {% if session.user %}

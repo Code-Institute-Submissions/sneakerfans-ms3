@@ -231,6 +231,7 @@ def delete_sneakers(sneaker_id):
     flash("You must be a user to delete sneakers")
 
 
+# Manage Categories
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
@@ -239,6 +240,7 @@ def get_categories():
     return redirect(url_for("get_categories"))
 
 
+# Add category
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
     if request.method == "POST":
@@ -252,8 +254,15 @@ def add_category():
     return render_template("add-category.html")
 
 
+# Edit category
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name")
+        }
+        mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
+        flash("Category has been updated!")
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
     return render_template("edit-category.html", category=category)
 

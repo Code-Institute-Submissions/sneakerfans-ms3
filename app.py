@@ -239,6 +239,19 @@ def get_categories():
     return redirect(url_for("get_categories"))
 
 
+@app.route("/add_category", methods=["GET", "POST"])
+def add_category():
+    if request.method == "POST":
+        category = {
+            "category_name": request.form.get("category_name")
+        }
+        mongo.db.categories.insert_one()
+        flash("New category added")
+        return redirect(url_for("get_categories"))
+
+    return render_template("add-category.html")
+
+
 # 404 error page
 # Credit: https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/
 @app.errorhandler(404)

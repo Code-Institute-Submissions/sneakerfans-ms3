@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <h3 class="center">ADD Category</h3>
+</div>
+
+
+<div class="row">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_sneakers', sneakers=sneakers)}}">
+        <div class="card-panel">
+            <!-- Category select dropdown -->
+            <div class="row tooltipped" data-position="top" data-tooltip="Please select appropriate category">
+                <div class="input-field col s12">
+                    <i class="fas fa-check-circle prefix" aria-hidden="true"></i>
+                    <select id="category_name" name="category_name" class="validate" required>
+                        <option value="" disabled selected>Choose category</option>
+                            {% for category in categories %}
+                        <option value="{{ category.category_name }}">{{ category.category_name.capitalize() }}</option>
+                            {% endfor %}
+                    </select>
+                    <label for="category_name">Sneaker Category</label>
+                </div>
+            </div>
+            <!-- Shoe name input -->
+            <div class="row tooltipped" data-position="top" data-tooltip="Please enter name of shoe min 5 characters">
+                <div class="input-field col s12">
+                    <i class="fas fa-check-circle prefix" aria-hidden="true"></i>
+                    <input id="shoe_name" name="shoe_name" minlength="5" maxlength="50" type="text" class="validate"
+                        required>
+                    <label for="shoe_name">Shoe Name</label>
+                </div>
+            </div>
+            <!-- Release year input -->
+            <div class="row tooltipped" data-position="top"
+                data-tooltip="Please enter shoe release year numbers only. Min 5 characters">
+                <div class="input-field col s12">
+                    <i class="fas fa-check-circle prefix" aria-hidden="true"></i>
+                    <input id="release_year" name="release_year" minlength="5" maxlength="50" type="number"
+                        class="validate" required>
+                    <label for="release_year">Release Year</label>
+                </div>
+            </div>
+            <!-- Shoe description -->
+            <div class="row tooltipped" data-position="top"
+                data-tooltip="Please enter shoe description. Min 50 characters">
+                <div class="input-field col s12">
+                    <i class="fas fa-check-circle prefix" aria-hidden="true"></i>
+                    <textarea id="shoe_description" name="shoe_description" minlength="50" maxlength="300"
+                        class="materialize-textarea validate" required></textarea>
+                    <label for="shoe_description">Shoe Description</label>
+                </div>
+            </div>
+            <!-- Image url input -->
+            <div class="row tooltipped" data-position="top"
+                data-tooltip="Please enter image url. Must be jpeg or png format">
+                <div class="input-field col s12">
+                    <i class="fas fa-check-circle prefix" aria-hidden="true"></i>
+                    <input id="image_url" name="image_url" type="url" class="validate" placeholder="https://"
+                        pattern="https?://.+" required>
+                    <label for="image_url">Image Link (png or jpeg only)</label>
+                </div>
+            </div>
+            <!-- Submit button -->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="buttons btn-large text-shadow">
+                        Add Sneakers <i class="fas fa-plus-square right" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

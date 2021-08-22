@@ -21,7 +21,10 @@
             <!-- Submit button -->
             <div class="row">
                 <div class="col s12 center-align">
-                    <button type="submit" class="buttons btn-large text-shadow">
+                    <!-- Cancel button -->
+                    <a href="{{ url_for('get_categories') }}" class="buttons-2 btn red text-shadow">Cancel <i
+                            class="fas fa-times-circle right" aria-hidden="true"></i></a>
+                    <button type="submit" class="btn black text-shadow">
                         Edit Category <i class="fas fa-edit right" aria-hidden="true"></i>
                     </button>
                 </div>

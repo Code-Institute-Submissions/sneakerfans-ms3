@@ -23,7 +23,7 @@
                     <span class="card-title">{{ category.category_name.capitalize() }}</span> 
                 </div>
                 <div class="card-action center-align">
-                    <a href="#" class="manage btn black text-shadow">Edit</a>
+                    <a href="{{ url_for('edit_category', category_id=category._id)}}" class="manage btn black text-shadow">Edit</a>
                     <a href="#" class=" manage btn red text-shadow">Delete</a>
                 </div>
             </div>

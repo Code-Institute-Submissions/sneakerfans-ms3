@@ -245,11 +245,17 @@ def add_category():
         category = {
             "category_name": request.form.get("category_name")
         }
-        mongo.db.categories.insert_one()
+        mongo.db.categories.insert_one(category)
         flash("New category added")
         return redirect(url_for("get_categories"))
 
     return render_template("add-category.html")
+
+
+@app.route("/edit_category/<category_id>", methods=["GET", "POST"])
+def edit_category(category_id):
+    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    return render_template("edit-category.html", category=category)
 
 
 # 404 error page

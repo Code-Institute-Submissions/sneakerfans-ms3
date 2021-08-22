@@ -17,7 +17,7 @@
 
 
 
-<div class="row manage">
+<div class="row">
     {% for category in categories %}
         <!-- Are you sure you want to delete modal -->
         <div id="modal1" class="modal">
@@ -28,10 +28,11 @@
                 <img src="{{url_for('static', filename='images/jumpman.png')}}" alt="Air Jordan Logo">
             </div>
             <div class="modal-footer">
-                <a href="{{ url_for('get_categories') }}" class="btn red text-shadow">No <i
+                <a href="{{ url_for('get_categories') }}" class="buttons-2 btn red text-shadow">No <i
                         class="fas fa-times-circle right" aria-hidden="true"></i></a>
-                <a href="{{ url_for('delete_category', category_id=category._id)}}" class="modal-close black btn">Yes <i
-                        class="fas fa-check-circle" aria-hidden="true"></i></a>
+                <a href="{{ url_for('delete_category', category_id=category._id)}}"
+                    class="buttons-2 modal-close black btn">Yes <i class="fas fa-check-circle"
+                        aria-hidden="true"></i></a>
             </div>
         </div>
         <!-- Category cards -->
@@ -43,8 +44,8 @@
                 <!-- Edit and Delete categories -->
                 <div class="card-action center-align">
                     <a href="{{ url_for('edit_category', category_id=category._id)}}"
-                        class="manage btn black text-shadow">Edit</a>
-                    <button data-target="modal1" class="manage btn red text-shadow modal-trigger">Delete</button>
+                        class="buttons-2 btn black text-shadow">Edit</a>
+                    <button data-target="modal1" class="buttons-2 btn red text-shadow modal-trigger">Delete</button>
                 </div>
             </div>
         </div>

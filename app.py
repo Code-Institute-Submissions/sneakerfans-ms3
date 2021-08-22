@@ -132,6 +132,10 @@ def profile(username):
         if session["user"]:
             return render_template(
                 "profile.html", username=username, sneakers=sneakers)
+        # Trying to redirect admin to manage categories
+        elif session["user"] == "admin23":
+            categories = mongo.db.categories.find().sort("category_name", 1)
+            return redirect(url_for("categories.html", categories=categories))
 
     return redirect(url_for("login"))
 

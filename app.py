@@ -249,7 +249,7 @@ def add_category():
         }
 
         # Check if category name already exists in database
-        existing_category = mongo.db.categories.find(
+        existing_category = mongo.db.categories.find_one(
             {"category_name": request.form.get("category_name").lower()})
         if existing_category:
             flash("Category already exists! Try again")

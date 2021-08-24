@@ -12,7 +12,7 @@ $(document).ready(function () {
 
     // Auto close flash messages
     $(function() { setTimeout(function() { 
-    $("#form-alert").hide(1000) }, 2000); });
+    $("#form-alert").hide(1000); }, 2000); });
   
 
     // Stop form icons from changing color when inputs are clicked
@@ -37,11 +37,13 @@ $(document).ready(function () {
         // Create variable for green underline (valid selection)
         let classValid = {
             "border-bottom": "1px solid #4caf50",
+            "-webkit-box-shadow": "0 1px 0 0 #4caf50",
             "box-shadow": "0 1px 0 0 #4caf50"
         };
         // Create variable for red underline (not valid selection)
         let classInvalid = {
             "border-bottom": "1px solid #f44336",
+            "-webkit-box-shadow": "0 1px 0 0 #f44336",
             "box-shadow": "0 1px 0 0 #f44336"
         };
         // If the validate property is required then show required message on DOM

@@ -132,10 +132,6 @@ def profile(username):
         if session["user"]:
             return render_template(
                 "profile.html", username=username, sneakers=sneakers)
-        # Trying to redirect admin to manage categories
-        elif session["user"] == "admin":
-            categories = mongo.db.categories.find().sort("category_name", 1)
-            return redirect(url_for("categories.html", categories=categories))
 
     return redirect(url_for("login"))
 
@@ -235,9 +231,10 @@ def delete_sneakers(sneaker_id):
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
-    if session["user"] == "admin".lower():
-        return render_template("categories.html", categories=categories)
-    return redirect(url_for("get_categories"))
+    if "user" in session:
+        if session["user"] == "admin".lower():
+            return render_template("categories.html", categories=categories)
+        return redirect(url_for("get_categories"))
 
 
 # Add category
@@ -249,9 +246,9 @@ def add_category():
         }
 
         # Check if category name already exists in database
-        existing_category = mongo.db.categories.find(
-            {"category_name": request.form.get("category_name").lower()})
-        if existing_category:
+        existing_category = list(mongo.db.categories.find(
+            {"category_name": request.form.get("category_name").lower()}))
+        if len(existing_category) > 0:
             flash("Category already exists! Try again")
             return redirect(url_for("add_category"))
         mongo.db.categories.insert_one(category)

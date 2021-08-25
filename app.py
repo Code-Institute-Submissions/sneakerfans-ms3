@@ -104,6 +104,9 @@ def login():
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
+                # Send Admin to manage categories
+                if session['user'] == "admin":
+                    return redirect(url_for('get_categories'))
                 flash("Welcome back, {}!".format(request.form.get("username")))
                 return redirect(url_for("profile", username=session["user"]))
             else:
@@ -247,8 +250,9 @@ def add_category():
 
         # Check if category name already exists in database
         existing_category = list(mongo.db.categories.find(
-            {"category_name": request.form.get("category_name").lower()}))
+            {"category_name": request.form.get("category_name")}))
         if len(existing_category) > 0:
+            print(existing_category)
             flash("Category already exists! Try again")
             return redirect(url_for("add_category"))
         mongo.db.categories.insert_one(category)

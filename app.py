@@ -245,14 +245,12 @@ def get_categories():
 def add_category():
     if request.method == "POST":
         category = {
-            "category_name": request.form.get("category_name")
+            "category_name": request.form.get("category_name").lower()
         }
 
         # Check if category name already exists in database
-        existing_category = list(mongo.db.categories.find(
-            {"category_name": request.form.get("category_name")}))
+        existing_category = list(mongo.db.categories.find(category))
         if len(existing_category) > 0:
-            print(existing_category)
             flash("Category already exists! Try again")
             return redirect(url_for("add_category"))
         mongo.db.categories.insert_one(category)
@@ -266,16 +264,15 @@ def add_category():
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     if request.method == "POST":
-        submit = {
-            "category_name": request.form.get("category_name")
+        query = {
+            "category_name": request.form.get("category_name").lower()
         }
         # Check if category name already exists in database
-        existing_category = mongo.db.categories.find(
-            {"category_name": request.form.get("category_name").lower()})
+        existing_category = mongo.db.categories.find(query)
         if existing_category:
             flash("Category already exists! Try again")
             return redirect(url_for("get_categories"))
-        mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
+        mongo.db.categories.update({"_id": ObjectId(category_id)}, query)
         flash("Category has been updated!")
         return redirect(url_for("get_categories"))
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})

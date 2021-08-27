@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
+<!-- Capitalise the first letter of sentences
+Credit: https://shubhamjain.co/til/capitalizing-first-letter-in-jinja/ -->
+{% macro sentence_case(text) %}
+    {{ text[0]|upper}}{{text[1:] }}
+{% endmacro %}
 
 <div class="container">
     <!-- Category -->
@@ -26,7 +31,7 @@
             </p>
             <p>
                 <strong>Description:</strong>
-                {{ sneaker.shoe_description }}
+                {{ sentence_case(sneaker.shoe_description) }}
             </p>
             <p>
                 <strong>Added By:</strong>

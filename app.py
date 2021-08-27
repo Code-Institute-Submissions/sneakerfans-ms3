@@ -159,10 +159,11 @@ def add_sneakers():
         if request.method == "POST":
             # Create dictionary to collect all form data
             add = {
-                "category_name": request.form.get("category_name"),
-                "shoe_name": request.form.get("shoe_name"),
+                "category_name": request.form.get("category_name").lower(),
+                "shoe_name": request.form.get("shoe_name").lower(),
                 "release_year": request.form.get("release_year"),
-                "shoe_description": request.form.get("shoe_description"),
+                "shoe_description": request.form.get(
+                    "shoe_description").lower(),
                 "image_url": request.form.get("image_url"),
                 "date_added": datetime.today().replace(microsecond=0),
                 "user": session["user"]
@@ -268,8 +269,8 @@ def edit_category(category_id):
             "category_name": request.form.get("category_name").lower()
         }
         # Check if category name already exists in database
-        existing_category = mongo.db.categories.find(query)
-        if existing_category:
+        existing_category = list(mongo.db.categories.find(query))
+        if len(existing_category) > 0:
             flash("Category already exists! Try again")
             return redirect(url_for("get_categories"))
         mongo.db.categories.update({"_id": ObjectId(category_id)}, query)

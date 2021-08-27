@@ -59,8 +59,9 @@
         {% if session.user|lower == sneaker.user %}
             <div class="col s12 m4 search-go">
                 <a href="{{ url_for('edit_sneakers', sneaker_id=sneaker._id) }}"
-                    class="buttons-2 black btn text-shadow">Edit</a>
-                <button data-target="modal1" class="red btn text-shadow modal-trigger">Delete</button>
+                    class="buttons-2 black btn text-shadow">Edit <i class="fas fa-edit" aria-hidden="true"></i></a>
+                <button data-target="modal1" class="red btn text-shadow modal-trigger">Delete <i
+                        class="fas fa-trash-alt" aria-hidden="true"></i></button>
             </div>
         {% endif %}
 

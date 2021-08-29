@@ -11,7 +11,8 @@
     <form class="col s12 m8 offset-m2" method="post" action="{{ url_for('login') }}">
         <div class="card-panel">
             <!-- Username field -->
-            <div class="row tooltipped" data-position="top" data-tooltip="Must contain 5 or more characters">
+            <div class="row tooltipped" data-position="top"
+                data-tooltip="Must contain 5 or more characters. Lowercase only.">
                 <div class="input-field col s12">
                     <i class="fas fa-user-cog prefix" aria-hidden="true"></i>
                     <input id="username" name="username" type="text" minlength="5" maxlength="20" pattern=".{5,}"

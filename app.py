@@ -181,7 +181,7 @@ def add_sneakers():
             # Insert all form data to mongodb sneakers collection
             mongo.db.sneakers.insert_one(add)
             flash("Your sneakers have been added!")
-            return redirect(url_for("get_sneakers"))
+            return redirect(url_for('profile', username=session['user']))
     # Create categories variable to alphabetically sort html select
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add-sneakers.html", categories=categories)
@@ -229,7 +229,7 @@ def delete_sneakers(sneaker_id):
             abort(400)
         mongo.db.sneakers.remove({"_id": ObjectId(sneaker_id)})
         flash("Sneakers successfully deleted")
-        return redirect(url_for("get_sneakers"))
+        return redirect(url_for('profile', username=session['user']))
     flash("You must be a user to delete sneakers")
 
 

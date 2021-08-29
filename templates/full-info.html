@@ -52,7 +52,7 @@ Credit: https://shubhamjain.co/til/capitalizing-first-letter-in-jinja/ -->
                 <img src="{{url_for('static', filename='images/jumpman.png')}}" alt="Air Jordan Logo">
             </div>
             <div class="modal-footer">
-                <a href="{{ url_for('get_sneakers') }}" class="buttons-2 btn red text-shadow">No <i
+                <a href="{{ url_for('profile', username=session['user']) }}" class="buttons-2 btn red text-shadow">No <i
                         class="fas fa-times-circle right" aria-hidden="true"></i></a>
                 <a href="{{ url_for('delete_sneakers', sneaker_id=sneaker._id) }}"
                     class="buttons-2 modal-close black btn">Yes <i class="fas fa-check-circle"

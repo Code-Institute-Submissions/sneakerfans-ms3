@@ -87,7 +87,7 @@ def sign_up():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
-        return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for("login"))
     return render_template("sign-up.html")
 
 
@@ -106,8 +106,9 @@ def login():
                 session["user"] = request.form.get("username").lower()
                 # Send Admin to manage categories
                 if session['user'] == "admin":
+                    flash("Welcome Admin")
                     return redirect(url_for('get_categories'))
-                flash("Welcome back, {}!".format(request.form.get("username")))
+                flash("Welcome, {}!".format(request.form.get("username")))
                 return redirect(url_for("profile", username=session["user"]))
             else:
                 # Password does not match
@@ -163,7 +164,7 @@ def add_sneakers():
                 "shoe_name": request.form.get("shoe_name").lower(),
                 "release_year": request.form.get("release_year"),
                 "shoe_description": request.form.get(
-                    "shoe_description").lower(),
+                    "shoe_description"),
                 "image_url": request.form.get("image_url"),
                 "date_added": datetime.today().replace(microsecond=0),
                 "user": session["user"]
@@ -197,8 +198,8 @@ def edit_sneakers(sneaker_id):
         if request.method == "POST":
             # Create dictionary to collect all form data
             add = {
-                "category_name": request.form.get("category_name"),
-                "shoe_name": request.form.get("shoe_name"),
+                "category_name": request.form.get("category_name").lower(),
+                "shoe_name": request.form.get("shoe_name").lower(),
                 "release_year": request.form.get("release_year"),
                 "shoe_description": request.form.get("shoe_description"),
                 "image_url": request.form.get("image_url"),
@@ -209,6 +210,7 @@ def edit_sneakers(sneaker_id):
             # Update mongodb sneakers collection
             mongo.db.sneakers.update({"_id": ObjectId(sneaker_id)}, add)
             flash("Your sneakers have been updated!")
+            return redirect(url_for('profile', username=session['user']))
 
     sneaker = mongo.db.sneakers.find_one_or_404({"_id": ObjectId(sneaker_id)})
 

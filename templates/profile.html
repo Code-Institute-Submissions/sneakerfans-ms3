@@ -16,6 +16,11 @@
         <a href="{{ url_for('add_sneakers') }}" class="buttons btn-large text-shadow">
             Add Sneakers <i class="fas fa-plus-square right" aria-hidden="true"></i>
         </a>
+        {% if session.user|lower == "admin"|lower %}
+            <a href="{{ url_for('get_categories') }}" class="buttons btn-large text-shadow">
+                Manage Categories <i class="fas fa-directions right" aria-hidden="true"></i>
+            </a>
+        {% endif %}
     </div>
 </div>
 

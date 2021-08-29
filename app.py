@@ -237,57 +237,74 @@ def delete_sneakers(sneaker_id):
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
-    if "user" in session:
-        if session["user"] == "admin".lower():
-            return render_template("categories.html", categories=categories)
-        return redirect(url_for("get_categories"))
+    # Check if user is authenticated
+    if is_authenticated():
+        if "user" in session:
+            if session["user"] == "admin".lower():
+                return render_template(
+                    "categories.html", categories=categories)
+            return redirect(url_for("get_categories"))
 
 
 # Add category
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
-    if request.method == "POST":
-        category = {
-            "category_name": request.form.get("category_name").lower()
-        }
+    # Check if user is authenticated
+    if is_authenticated():
+        if request.method == "POST":
+            category = {
+                "category_name": request.form.get("category_name").lower()
+            }
 
-        # Check if category name already exists in database
-        existing_category = list(mongo.db.categories.find(category))
-        if len(existing_category) > 0:
-            flash("Category already exists! Try again")
-            return redirect(url_for("add_category"))
-        mongo.db.categories.insert_one(category)
-        flash("New category added")
-        return redirect(url_for("get_categories"))
+            # Check if category name already exists in database
+            existing_category = list(mongo.db.categories.find(category))
+            if len(existing_category) > 0:
+                flash("Category already exists! Try again")
+                return redirect(url_for("add_category"))
+            mongo.db.categories.insert_one(category)
+            flash("New category added")
+            return redirect(url_for("get_categories"))
 
-    return render_template("add-category.html")
+        return render_template("add-category.html")
 
 
 # Edit category
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
-    if request.method == "POST":
-        query = {
-            "category_name": request.form.get("category_name").lower()
-        }
-        # Check if category name already exists in database
-        existing_category = list(mongo.db.categories.find(query))
-        if len(existing_category) > 0:
-            flash("Category already exists! Try again")
+    # Check if user is authenticated
+    if is_authenticated():
+        # Check if object id is valid
+        if not is_object_id_valid(category_id):
+            abort(400)
+        if request.method == "POST":
+            query = {
+                "category_name": request.form.get("category_name").lower()
+            }
+            # Check if category name already exists in database
+            existing_category = list(mongo.db.categories.find(query))
+            if len(existing_category) > 0:
+                flash("Category already exists! Try again")
+                return redirect(url_for("get_categories"))
+            mongo.db.categories.update({"_id": ObjectId(category_id)}, query)
+            flash("Category has been updated!")
             return redirect(url_for("get_categories"))
-        mongo.db.categories.update({"_id": ObjectId(category_id)}, query)
-        flash("Category has been updated!")
-        return redirect(url_for("get_categories"))
-    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    category = mongo.db.categories.find_one_or_404(
+        {"_id": ObjectId(category_id)})
     return render_template("edit-category.html", category=category)
 
 
 # Delete category
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
-    mongo.db.categories.remove({"_id": ObjectId(category_id)})
-    flash("Category successfully deleted")
-    return redirect(url_for("get_categories"))
+    # Check if user is authenticated
+    if is_authenticated():
+        # Check if object id is valid
+        if not is_object_id_valid(category_id):
+            abort(400)
+        mongo.db.categories.remove({"_id": ObjectId(category_id)})
+        flash("Category successfully deleted")
+        return redirect(url_for("get_categories"))
+    flash("You must be an admin to delete categories")
 
 
 # 404 error page

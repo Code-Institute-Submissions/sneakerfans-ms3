@@ -14,6 +14,7 @@ I did not use any fancy fonts or background colors and opted to use the default 
 The website uses HTML and CSS and Javascript in the front end. With my main css framework library being materialize.css and my Javacript framework is jquery cdn. I have also incorporated the use of the font awesome icons cdn for all icons. In the backend flask is used and jinja templating is used to inject data to the HTML. My chosen database is MongoDB.
 
 ## [View Live Project](https://ms3-sneakerfans.herokuapp.com/)
+
 ![SNEAKERFANS](static/images/responsive.png)
 
 ## Wireframes:
@@ -213,7 +214,8 @@ For added security, when a new user signs up they are directed to the login page
 On successfully signing up and logging in users are directed to their profile page. They are also given a welcome message using the Flask flash() method. I have used javascript to give all flash messages an auto timeout and also the option to manually close. Once users have access to their profile page they can now add their favourite sneakers using a call to action button that is wired to a simple form that writes to the mongodb database. Once a user has added to the database they now have the option to edit and delete everything on their profile page. Users will not have access to edit or delete any other users data.
 
 ### Add sneakers
-When a use clicks on the add sneakers button they are directed to a form which allows them to pick the category/ add the sneaker name/ add the release year/ A description of the sneaker and add an image url. The user name and date it was added to the database with is taken care of in the backend function. I have used jinja templating to inject all of the database information the user adds to attractive image cards. I have also added a backup feature of using the one-error html attribute to add a back up image in case the image url is broken. Sneaker collectors will find the humour in this back up image as I have used an image from a 1980s Air jordan commercial of a pair of sneakers that were banned by the NBA when they were first released. I used photoshop to add the text "No image available" 
+When a use clicks on the add sneakers button they are directed to a form which allows them to pick the category/ add the sneaker name/ add the release year/ A description of the sneaker and add an image url. The user name and date it was added to the database with is taken care of in the backend function. I have used jinja templating to inject all of the database information the user adds to attractive image cards. I have also added a backup feature of using the one-error html attribute to add a back up image in case the image url is broken. Sneaker collectors will find the humour in this back up image as I have used an image from a 1980s Air jordan commercial of a pair of sneakers that were banned by the NBA when they were first released. I used photoshop to add the text "No image available".
+
 ![Image not available](static/images/error-image.png)
 
 ### Edit Sneakers
@@ -235,10 +237,11 @@ I also added copyright details.
 There are some features that I would love to implement on future releases:
 
 1. #### Add Comments Likes and Views - The end goal for this site is to create a community of sneaker lovers and collectors. I would like to eventually have a social aspect whereby users can comment on and like other users images. I would also like to collect the amount of likes and views on specific sneakers to allow this data to be shared as an analytics tool for sneaker retailers.
-2. #### Retailer dashboard - In order to monetize the site. I would like to add an analytics dashboard that sneaker retailers can pay an annual fee to gain access to. Here they can see what sneakers are trending and what sneakers get the most likes and views during different fashion seasons. This data would help retailers stock up on popular brands while not wasting money on stock that does not sell well. This data will also allow retailers to tailor there sneaker marketing campaigns to the demographics they collect in their analytics dashbars. No user information would be shared from this data.
+2. #### Retailer dashboard - In order to monetize the site. I would like to add an analytics dashboard that sneaker retailers can pay an annual fee to gain access to. Here they can see what sneakers are trending and what sneakers get the most likes and views during different fashion seasons. This data would help retailers stock up on popular brands while not wasting money on stock that does not sell well. This data will also allow retailers to tailor their sneaker marketing campaigns to the demographics they collect in their analytics dashbars. No user information would be shared from this data.
 3. #### User profile dashboard - I would like to add a user dashboard which allows users add a profile photo and some information about themselves and edit as necessary. This is certainly a feature I would add soon.
 4. #### Restrict Image type - In order to keep the website nice and clean with no broken images I would like to implement a function in the backend which will only allow data to be written to the database if the image url meets the criteria of jpeg or png. If not the user will be given a message that "this image is not a png or jpeg please try again". I had began researching this option towards the end of the project but unfortunatley I just ran out of time to implement it.
 5. #### Admin dashboard - Due to time constraints my admin access is limited to just managing categories. For future releases I would like to add a full admin dashboard which allows to monitor all user and retailer accounts. If user content is deemed inappropriate it can be removed from the site or updated as necessary. Retailer accounts and suscriptions can be kept track of from the admin dashbar.
 
-# Sitempap and Database Schema
+# Sitemap and Database Schema
+
 ![Sitemap](wireframes/sitemap.png)

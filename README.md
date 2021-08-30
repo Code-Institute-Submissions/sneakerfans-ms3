@@ -187,3 +187,33 @@ circle icon.
 ### Other themes:
 1. Use of relevant font awesome icons to add a professional touch.
 1. Use of subtle shadows to lift some elements off the page.
+
+# AVAILABLE FEATURES
+
+### Navbar
+The nav bar is fixed to enhance user experience. All navigation links change color on clicking.
+the nav bar is made responsive using materialize.css sidenav-trigger class with javascript initialization.
+
+### Home
+The home page is laid out with an eye catching hero image and call to action button to encourage users
+to sign up to website. I have used the mongodb aggregate method to display 6 random images from the database in materialize image cards. The image cards content is injected using the jinja templating language. At the bottom of the home page another internal link guides the user to the sign up form.
+
+### Browse Collection
+The browse collection page allows users to view the full sneaker collection whether they are logged in or not. There is the addition of a search bar which allows users to search all documents in the sneakers collection. Allowing non registered users to access this feature will encourage more sign ups to the website as users will be eager to share their sneaker collections and favourites upon seeing what other users have added.
+
+### Login 
+A simple login form of user name and password allows users to quickly log into the site. The styling of this form has been kept similar to other competitor sites such as [nike.com](https://www.nike.com/ie/). I have also used an eye and slash eye font awesome icon which are toggled using a javascript function to show and hide the password. I initially had issues displaying the icon in the input field but eventually I solved this with some css. [Credit](https://codepen.io/Sohail05/pen/yOpeBm)
+
+### Sign Up
+A simple sign up form of username and password allows users to easily sign up. I have kept this form 
+very simply to reduce bounce rates and to encourage new users to sign up without having to verify email links and passwords. As the site's user collection grows I may implement these enhanced security features. I have used the html pattern attribute to ensure certain criteria is met when signing up. I have also used materialize tool tips to clarify all steps of the form to new users.
+For added security, when a new user signs up they are directed to the login page to reenter their details instead of being given direct access to the site.
+
+### Profile Page
+On successfully signing up and logging in users are directed to their profile page. They are also given a welcome message using the Flask flash() method. I have used javascript to give all flash messages an auto timeout and also the option to manually close. Once users have access to their profile page they can now add their favourite sneakers using a call to action button that is wired to a simple form that writes to the mongodb database. Once a user has added to the database they now have the option to edit and delete everything on their profile page. Users will not have access to edit or delete any other users data.
+
+### Edit Sneakers
+When a user clicks on the edit button on any of their sneaker additons they are directed to the edit sneakers form which is prepopulated using the objectid from mongodb. They now have the option to edit all input fields on the form and resubmit. Once edits are completed this new information is updated in mongodb and now can be seen on their profile page.
+
+### Delete sneakers
+Users have the option to remove any of their entries to mongodb using the delete button. I have used some defensive programming to prevent accidental deletion. To implement this I have used a materialize modal which is triggered with a javascript function. The delete button calls the modal and from here the user is given the options of "are you sure?" and a yes and no button. The yes button triggers my backend python function to remove the data from mongodb. Since the theme of the site is iconic sneakers I used the well known Air Jordan jumpman logo for all warning and error messages. I doctored the logo in photoshop to replace the basketball with a font awesome circle exclamation icon. ![Jumpman error image](static/images/jumpman.png)

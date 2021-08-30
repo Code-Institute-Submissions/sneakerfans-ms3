@@ -239,3 +239,6 @@ There are some features that I would love to implement on future releases:
 3. #### User profile dashboard - I would like to add a user dashboard which allows users add a profile photo and some information about themselves and edit as necessary. This is certainly a feature I would add soon.
 4. #### Restrict Image type - In order to keep the website nice and clean with no broken images I would like to implement a function in the backend which will only allow data to be written to the database if the image url meets the criteria of jpeg or png. If not the user will be given a message that "this image is not a png or jpeg please try again". I had began researching this option towards the end of the project but unfortunatley I just ran out of time to implement it.
 5. #### Admin dashboard - Due to time constraints my admin access is limited to just managing categories. For future releases I would like to add a full admin dashboard which allows to monitor all user and retailer accounts. If user content is deemed inappropriate it can be removed from the site or updated as necessary. Retailer accounts and suscriptions can be kept track of from the admin dashbar.
+
+# Sitempap and Database Schema
+![Sitemap](wireframes/sitemap.png)

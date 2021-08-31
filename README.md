@@ -199,7 +199,7 @@ circle icon.
 # AVAILABLE FEATURES
 
 ### Navbar
-The nav bar is fixed to enhance user experience. All navigation links change color on clicking.
+The nav bar is fixed to enhance user experience.
 The nav bar is made responsive using materialize.css sidenav-trigger class with javascript initialization.
 
 ### Home
@@ -232,7 +232,7 @@ On successfully signing up and logging in users are directed to their profile pa
 ![SNEAKERFANS](wireframes/my-sneakers.png)
 
 ### Add sneakers
-When a use clicks on the add sneakers button they are directed to a form which allows them to pick the category/ add the sneaker name/ add the release year/ A description of the sneaker and add an image url. The user name and date it was added to the database with is taken care of in the backend function. I have used jinja templating to inject all of the database information the user adds to attractive image cards. I have also added a backup feature of using the one-error html attribute to add a back up image in case the image url is broken. Sneaker collectors will find the humour in this back up image as I have used an image from a 1980s Air jordan commercial of a pair of sneakers that were banned by the NBA when they were first released. I used photoshop to add the text "No image available".
+When a user clicks on the add sneakers button they are directed to a form which allows them to pick the category/ add the sneaker name/ add the release year/ A description of the sneaker and add an image url. The user name and date it was added to the database with is taken care of in the backend function. I have used jinja templating to inject all of the database information the user adds to attractive image cards. I have also added a backup feature of using the one-error html attribute to add a back up image in case the image url is broken. Sneaker collectors will find the humour in this back up image as I have used an image from a 1980s Air jordan commercial of a pair of sneakers that were banned by the NBA when they were first released. I used photoshop to add the text "No image available".
 
 ![SNEAKERFANS](wireframes/add-sneakers.png)
 
@@ -257,7 +257,7 @@ Users have the option to remove any of their entries to mongodb using the delete
 ![Delete modal image](wireframes/modal.png)
 
 ### Mangage Categories
-Only admin has access to this page. When admin logs in they are directed to the manage categories page. From here they have the option to add new categories or edit and delete existing categories. I have also used defensive programming to prevent accidental deletion of categories. I have added an if statement in my python functions to check if a category already exists in the database to prevent accidental duplication of categories by user error. Admin also have access to their profile page which allows them to add new sneakers to database directly from the application. I have kept the admin control to only managing categories for now. As the site grows I would like to implement a full admin dashboard which would allow to monitor inappropriate content and edit or delete user data and profiles if it does not meet the criteria of the website.
+Only admin has access to this page. When admin logs in they are directed to the manage categories page. From here they have the option to add new categories or edit and delete existing categories. I have also used defensive programming to prevent accidental deletion of categories. I have added an if statement in my python functions to check if a category already exists in the database to prevent accidental duplication of categories by user error. Admin also have access to their profile page which allows them to add new sneakers to the database directly from the application. I have kept the admin control to only managing categories for now. As the site grows I would like to implement a full admin dashboard which would allow to monitor inappropriate content and edit or delete user data and profiles if it does not meet the criteria of the website.
 
 ![Manage Categories](wireframes/manage-categories.png)
 
@@ -283,7 +283,7 @@ The site map was designed using [Lucid Chart](https://www.lucidchart.com/pages/)
 
 ![DB Schema](wireframes/schema.png)
 
-For my database I choose MongoDB for this project. It was a good choice as I had no relational data such as customer Ids, Invoice or Order Ids. My database consists of 3 collections:
+For my database I choose MongoDB for this project. It was a good choice as I had no relational data such as customer Ids, Invoice Ids or Order Ids. My database consists of 3 collections:
 1. Categories
 2. Sneakers
 3. Users 
@@ -322,5 +322,15 @@ This data is collected when a new user signs up.
 * This data is collected when a new user signs up. The password is encrypted by importing generate_password_hash from werkzeug.security.
 
 ![Users](wireframes/users.png)
+
+# Security Features
+## Passwords:
+In order to keep a user's password safe I have imported generate_password_hash from werkzeug.security. This ensures user passwords are encrypted when added to the database.
+## Check if users are authenticated:
+To carry out any of the logged in functionality users must be authenticated. This has been achieved by using the is_authenticated() method. If a user should not have access to a certain feature they will be shown a bad request error and guided back to the home page. 
+## Error handlers:
+I have imported abort from Flask to deal with user error using appropriate errorhandler() decorators. When a user tries to acces a page that they are not authorised to acess they will receive an error. I have also implemented is_object_id_valid(id_value) method to check that the database object id is valid. 
+
+![Jumpman error image](wireframes/error.png)
 
 

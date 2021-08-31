@@ -130,6 +130,9 @@ Account holders will gain additonal access to:
 1. Add Sneakers - (form to allow user to write to database)
 1. Log Out
 
+Admin will gain access to:
+1. Manage Categories - (Admin can add or delete categories)
+
 I have used a fixed navigation bar to allow users to move to any other section from their current section. Navigation has been kept simple and obvious. There are also call to action buttons and text to encourage new visitors to create an account. 
 
 ## Skeleton:

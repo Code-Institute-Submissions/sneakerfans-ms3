@@ -117,7 +117,7 @@ hr {
 
 /* Keep all card containers and images the same height */
 .card img {
-  max-height: 230px;
+  height: 230px;
   -o-object-fit: cover;
   object-fit: cover;
 }

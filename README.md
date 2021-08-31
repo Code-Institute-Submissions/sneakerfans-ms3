@@ -169,7 +169,7 @@ The website is inspired by [Nike](https://www.nike.com/ie/). I always loved the 
 The [Air Jordan 3](https://sneakernews.com/wp-content/uploads/2021/05/Air-Jordan-3-Cardinal-2022.jpg).
 
 ### Fonts:
-For all fonts I kept things simple with the default sans serif. I added some underlines to my page headings and the simplicity seems to suit the syle I wanted for the website.
+For all fonts I kept things simple with the default sans serif. I added some underlines to my page headings and the simplicity seems to suit the style I wanted for the website.
 
 ### Images: 
 The home page uses a hero image of a pair of Air Jordan Sneakers on feet. The image is clean and
@@ -178,6 +178,8 @@ I used photoshop to design the company logo.
 I also used photoshop for the error handler pages and the are you sure you want to delete modal. 
 For these pages I used the Air Jordan Jumpman logo and replaced the basketball with an exclamation
 circle icon.
+
+![Error Jumpan](static/images/jumpman.png)
 
 ### Order and sequence:
 1. Navigation order Not logged in - Home/ Browse Collection/ Log In/ Sign Up

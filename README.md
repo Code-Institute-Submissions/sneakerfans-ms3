@@ -326,6 +326,8 @@ This data is collected when a new user signs up.
 # Security Features
 ## Passwords:
 In order to keep a user's password safe I have imported generate_password_hash from werkzeug.security. This ensures user passwords are encrypted when added to the database.
+## Secret Keys:
+In order to ensure no one gains access to my MongoDB secret key it has been added to the .gitignore file. This means that any sensitive information files I do not want to be commited to my public github profile will be ignored and will not added to the staging area when pushing to github. 
 ## Check if users are authenticated:
 To carry out any of the logged in functionality users must be authenticated. This has been achieved by using the is_authenticated() method. If a user should not have access to a certain feature they will be shown a bad request error and guided back to the home page. 
 ## Error handlers:

@@ -15,7 +15,7 @@ The website uses HTML and CSS and Javascript in the front end. With my main css 
 
 ## [View Live Project](https://ms3-sneakerfans.herokuapp.com/)
 
-![SNEAKERFANS](static/images/responsive.png)
+![SNEAKERFANS](wireframes/responsive.png)
 
 ## Wireframes:
 My initial wireframes and database schemas were sketched on paper and when I was happy I was going in the correct direction I used [Balsamiq](https://balsamiq.com/wireframes/) to finalise my mockups for the front end. For my database schema I used [db diagram](https://dbdiagram.io/). 
@@ -199,35 +199,60 @@ The nav bar is made responsive using materialize.css sidenav-trigger class with 
 The home page is laid out with an eye catching hero image and call to action button to encourage users
 to sign up to the website. I have used the mongodb aggregate method to display 6 random images from the database in materialize image cards. The image cards content is injected using the jinja templating language. At the bottom of the home page another internal link guides the user to the sign up form.
 
+![SNEAKERFANS](wireframes/responsive.png)
+
 ### Browse Collection
 The browse collection page allows users to view the full sneaker collection whether they are logged in or not. There is the addition of a search bar which allows users to search all documents in the sneakers collection. Allowing non registered users to access this feature will encourage more sign ups to the website as users will be eager to share their sneaker collections and favourites upon seeing what other users have added.
 
+
+![SNEAKERFANS](wireframes/browse-collection.png)
+
 ### Login 
 A simple login form of user name and password allows users to quickly log into the site. The styling of this form has been kept similar to other competitor sites such as [nike.com](https://www.nike.com/ie/). I have also used an eye and slash eye font awesome icon which are toggled using a javascript function to show and hide the password. I initially had issues displaying the icon in the input field but eventually I solved this with some css. [Credit](https://codepen.io/Sohail05/pen/yOpeBm)
+
+![SNEAKERFANS](wireframes/log-in.png)
 
 ### Sign Up
 A simple sign up form of username and password allows users to easily sign up. I have kept this form 
 very simple to reduce bounce rates and to encourage new users to sign up without having to verify email links and passwords. As the site's user collection grows I may implement these enhanced security features. I have used the html pattern attribute to ensure certain criteria is met when signing up. I have also used materialize tool tips to clarify all steps of the form to new users.
 For added security, when a new user signs up they are directed to the login page to re enter their details instead of being given direct access to the site.
 
+![SNEAKERFANS](wireframes/sign-up.png)
+
 ### Profile Page
 On successfully signing up and logging in users are directed to their profile page. They are also given a welcome message using the Flask flash() method. I have used javascript to give all flash messages an auto timeout and also the option to manually close. Once users have access to their profile page they can now add their favourite sneakers using a call to action button that is wired to a simple form that writes to the mongodb database. Once a user has added to the database they now have the option to edit and delete everything on their profile page. Users will not have access to edit or delete any other users data.
 
+![SNEAKERFANS](wireframes/my-sneakers.png)
+
 ### Add sneakers
 When a use clicks on the add sneakers button they are directed to a form which allows them to pick the category/ add the sneaker name/ add the release year/ A description of the sneaker and add an image url. The user name and date it was added to the database with is taken care of in the backend function. I have used jinja templating to inject all of the database information the user adds to attractive image cards. I have also added a backup feature of using the one-error html attribute to add a back up image in case the image url is broken. Sneaker collectors will find the humour in this back up image as I have used an image from a 1980s Air jordan commercial of a pair of sneakers that were banned by the NBA when they were first released. I used photoshop to add the text "No image available".
+
+![SNEAKERFANS](wireframes/add-sneakers.png)
 
 ![Image not available](static/images/error-image.png)
 
 ### Edit Sneakers
 When a user clicks on the edit button on any of their sneaker additons they are directed to the edit sneakers form which is prepopulated using the objectid from mongodb. They now have the option to edit all input fields on the form and resubmit. Once edits are completed this new information is updated in mongodb and now can be seen on their profile page.
 
+![SNEAKERFANS](wireframes/edit-sneakers.png)
+
+### Full info page
+When a user clicks on an image card they are taken to the full information of that sneaker. All info from the sneakers collection is injected to the full-info template using jinja and python. If the user clicks on a collection that they added to the database they will be able to edit and delete their own data but not other users. 
+
+![SNEAKERFANS](wireframes/full-info.png)
+
+
+
 ### Delete sneakers
 Users have the option to remove any of their entries to mongodb using the delete button. I have used some defensive programming to prevent accidental deletion. To implement this I have used a materialize modal which is triggered with a javascript function. The delete button calls the modal and from here the user is given the options of "are you sure?" and a yes and no button. The yes button triggers my backend python function to remove the data from mongodb. Since the theme of the site is iconic sneakers I used the well known Air Jordan jumpman logo for all warning and error messages. I doctored the logo in photoshop to replace the basketball with a font awesome circle exclamation icon. 
 
-![Jumpman error image](static/images/jumpman.png)
+![Jumpman error image](wireframes/error.png)
+![Delete modal image](wireframes/modal.png)
 
 ### Mangage Categories
 Only admin has access to this page. When admin logs in they are directed to the manage categories page. From here they have the option to add new categories or edit and delete existing categories. I have also used defensive programming to prevent accidental deletion of categories. I have added an if statement in my python functions to check if a category already exists in the database to prevent accidental duplication of categories by user error. Admin also have access to their profile page which allows them to add new sneakers to database directly from the application. I have kept the admin control to only managing categories for now. As the site grows I would like to implement a full admin dashboard which would allow to monitor inappropriate content and edit or delete user data and profiles if it does not meet the criteria of the website.
+
+![Manage Categories](wireframes/manage-categories.png)
 
 ### Footer
 I have added social media links and contact details in the footer. All social media icons are clickable and work in external tabs.
@@ -242,6 +267,53 @@ There are some features that I would love to implement on future releases:
 4. #### Restrict Image type - In order to keep the website nice and clean with no broken images I would like to implement a function in the backend which will only allow data to be written to the database if the image url meets the criteria of jpeg or png. If not the user will be given a message that "this image is not a png or jpeg please try again". I had began researching this option towards the end of the project but unfortunatley I just ran out of time to implement it.
 5. #### Admin dashboard - Due to time constraints my admin access is limited to just managing categories. For future releases I would like to add a full admin dashboard which allows to monitor all user and retailer accounts. If user content is deemed inappropriate it can be removed from the site or updated as necessary. Retailer accounts and suscriptions can be kept track of from the admin dashbar.
 
-# Sitemap and Database Schema
+# Sitemap
+The site map was designed using [Lucid Chart](https://www.lucidchart.com/pages/)
 
 ![Sitemap](wireframes/sitemap.png)
+
+# Database Schema
+
+![DB Schema](wireframes/schema.png)
+
+For my database I choose MongoDB for this project. It was a good choice as I had no relational data such as customer Ids, Invoice or Order Ids. My database consists of 3 collections:
+1. Categories
+2. Sneakers
+3. Users 
+
+![Collections](wireframes/collections.png)
+
+## Categories Collection:
+This collection consists of category documents. Which can only be managed by admin. Users can select a category from a drop down list when they are logged in and want to add a document to the sneakers collection.
+
+![Categories](wireframes/categories.png)
+
+## Sneakers Collection:
+This collection consists of a dictionary containing:
+### Category Name:
+* Users can write to the database when using the add sneakers form and choose the category from a dropdown list.
+### Shoe Name:
+* Users Can add the name of the sneaker to the database.
+### Release Year:
+* Users Can add the year the shoe was first released to the database.
+### Shoe Description:
+* Users can add a short description of the sneaker to the database.
+### Image:
+Users can add an image url in jpeg or png to the database. 
+### Date Added:
+* This is automatically added to the database by importing datetime to my app.py file.
+### User:
+* This automatically added from the user in session.
+
+![Sneakers](wireframes/sneakers.png)
+
+## Users Collection:
+* This collection consists of a dictionary containing:
+### Username:
+This data is collected when a new user signs up.
+### Password: 
+* This data is collected when a new user signs up. The password is encrypted by importing generate_password_hash from werkzeug.security.
+
+![Users](wireframes/users.png)
+
+

@@ -331,8 +331,96 @@ In order to ensure no one gains access to my MongoDB secret key it has been adde
 ## Check if users are authenticated:
 To carry out any of the logged in functionality users must be authenticated. This has been achieved by using the is_authenticated() method. If a user should not have access to a certain feature they will be shown a bad request error and guided back to the home page. 
 ## Error handlers:
-I have imported abort from Flask to deal with user error using appropriate errorhandler() decorators. When a user tries to acces a page that they are not authorised to acess they will receive an error. I have also implemented is_object_id_valid(id_value) method to check that the database object id is valid. 
+I have imported abort from Flask to deal with user error using appropriate errorhandler() decorators. When a user tries to access a page that they are not authorised to access they will receive an error. I have also implemented is_object_id_valid(id_value) method to check that the database object id is valid. 
 
 ![Jumpman error image](wireframes/error.png)
+
+# TECHNOLOGIES USED
+
+1. [Balsamiq](https://balsamiq.com/wireframes/)
+* I found Balsamiq an extremely usefull platform to design mock ups and get a feel of how my website would look before coding.
+
+2. [HTML 5](https://en.wikipedia.org/wiki/HTML)
+* HTML is the main mark up language used to design my website.
+
+3. [CSS 3](https://en.wikipedia.org/wiki/CSS)
+* All HTML elements were styled to my own personal taste using CSS language.
+
+4. [Javascript](https://www.javascript.com/)
+* Javascript was used to auto close flash messages and to validate the select dropdown on all forms.
+
+5. [Jquery](https://jquery.com/)
+* Jquery was used to show and hide elements on the document and also trigger modals and mobile navigation drop down.
+
+6. [Materialize 1.0.0](https://materializecss.com/)
+* In order to help style my website as well as making the layout responsive I used the materialize CDN.
+
+7. [Font Awesome](https://fontawesome.com/)
+* All icons have been sourced and added from the free version of font awesome.
+
+8. [Gitpod](https://www.gitpod.io/)
+* I used git pod as my IDE workspace to write and run all code. I used Git as my version control to commit and push all code to my GitHub repository.
+
+9. [Github](https://github.com/)
+* I used GitHub to store my Git commits and back up all code.
+
+10. [W3C HTML validator](https://validator.w3.org/)
+* I used the W3C validation service to ensure all HTML code passed validation.
+
+11. [W3C CSS validator](https://jigsaw.w3.org/css-validator/)
+* I used the W3C validation service to ensure all CSS code passed validation.
+
+12. [Jshint validator](https://jshint.com/)
+* Jshint was used to ensure all javascript code passed validation.
+
+13. [PEP8 validator](http://pep8online.com/)
+* PEP8 online was used to ensure all python code passed all PEP8 industry standards.
+
+14. [Python extends class validator](https://extendsclass.com/python-tester.html)
+* extendsclass was used to ensure all python syntax passed validation.
+
+15. [Lucid Chart](https://www.lucidchart.com/pages/)
+* Lucid chart was used to create the sitemap.
+
+16. [db diagram](https://dbdiagram.io/home)
+* Db diagram was used to create my database schema.
+
+17. [PIP](https://pip.pypa.io/en/stable/)
+* PIP was used to install all packaging tools.
+
+18. [Am I responsive](http://ami.responsivedesign.is/)
+* AM I responsive was used to create attractive screenshots from all devices to display on my README file.
+
+19. [Python3](https://www.python.org/download/releases/3.0/)
+* Python is the chosen backend programming language.
+
+20. [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+* Flask was used as a url based framework for quickly building web pages in conjuction with [Jinja](https://jinja.palletsprojects.com/en/3.0.x/) templating. 
+* I also used the [werkzeug toolkit](https://werkzeug.palletsprojects.com/en/2.0.x/) to encrypt user passwords.
+
+21. [MongoDB](https://www.mongodb.com/)
+* MongoDB was the chosen NOSQL database for this application.
+
+22. [PyMongo](https://pymongo.readthedocs.io/en/stable/)
+* PyMongo was used to query the database using python as the backend language.
+
+23. [Heroku](https://id.heroku.com/login)
+* Heroku was used as the hosting platform for this project.
+
+24. [Photoshop](https://www.adobe.com/ie/products/photoshop.html)
+* I used Adobe photoshop to create the company logo, error images and favicon.
+
+25. [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
+* Throughout the development process I used chrome developer tools for debugging and also to keep checking any changes I was making looked good on all devices.
+
+26. [WAVE web accessibility tool](https://wave.webaim.org/)
+* I used WAVE to make check any errors that my site may have which would effect users with hearing or visual disabilities.
+
+27. [a11y](https://color.a11y.com/)
+* I used a11y to get my color contrast between background and text as accessible as possible without comprimising my vision for the website design.
+
+28. [CSS Autoprefixer](https://autoprefixer.github.io/)
+* I used Autoprefixer to ensure all of my css styles would work on all browsers.
+
 
 

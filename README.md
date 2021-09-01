@@ -213,6 +213,12 @@ circle icon.
 1. Use of relevant font awesome icons to add a professional touch.
 1. Use of subtle shadows to lift some elements off the page.
 
+## **[BACK TO TOP](#content-quick-links)** *
+<hr style="height:5px;border-width:0;color:gray;background-color: #005b96">
+
+
+
+
 # AVAILABLE FEATURES
 
 ### Navbar
@@ -291,10 +297,16 @@ There are some features that I would love to implement on future releases:
 4. #### Restrict Image type - In order to keep the website nice and clean with no broken images I would like to implement a function in the backend which will only allow data to be written to the database if the image url meets the criteria of jpeg or png. If not the user will be given a message that "this image is not a png or jpeg please try again". I had began researching this option towards the end of the project but unfortunatley I just ran out of time to implement it.
 5. #### Admin dashboard - Due to time constraints my admin access is limited to just managing categories. For future releases I would like to add a full admin dashboard which allows to monitor all user and retailer accounts. If user content is deemed inappropriate it can be removed from the site or updated as necessary. Retailer accounts and suscriptions can be kept track of from the admin dashbar.
 
+## **[BACK TO TOP](#content-quick-links)** *
+<hr style="height:5px;border-width:0;color:gray;background-color: #005b96">
+
 # Sitemap Layout
 The site map was designed using [Lucid Chart](https://www.lucidchart.com/pages/)
 
 ![Sitemap](wireframes/sitemap.png)
+
+## **[BACK TO TOP](#content-quick-links)** *
+<hr style="height:5px;border-width:0;color:gray;background-color: #005b96">
 
 # Database Schema
 
@@ -340,6 +352,9 @@ This data is collected when a new user signs up.
 
 ![Users](wireframes/users.png)
 
+## **[BACK TO TOP](#content-quick-links)** *
+<hr style="height:5px;border-width:0;color:gray;background-color: #005b96">
+
 # Security Features
 ## Passwords:
 In order to keep a user's password safe I have imported generate_password_hash from werkzeug.security. This ensures user passwords are encrypted when added to the database.
@@ -351,6 +366,9 @@ To carry out any of the logged in functionality users must be authenticated. Thi
 I have imported abort from Flask to deal with user error using appropriate errorhandler() decorators. When a user tries to access a page that they are not authorised to access they will receive an error. I have also implemented is_object_id_valid(id_value) method to check that the database object id is valid. 
 
 ![Jumpman error image](wireframes/error.png)
+
+## **[BACK TO TOP](#content-quick-links)** *
+<hr style="height:5px;border-width:0;color:gray;background-color: #005b96">
 
 # TECHNOLOGIES USED
 
@@ -439,6 +457,9 @@ I have imported abort from Flask to deal with user error using appropriate error
 28. [CSS Autoprefixer](https://autoprefixer.github.io/)
 * I used Autoprefixer to ensure all of my css styles would work on all browsers.
 
+## **[BACK TO TOP](#content-quick-links)** *
+<hr style="height:5px;border-width:0;color:gray;background-color: #005b96">
+
 # CODE CREDITS
 
 ## [Show and hide password](https://codepen.io/Sohail05/pen/yOpeBm)
@@ -455,11 +476,17 @@ I have imported abort from Flask to deal with user error using appropriate error
 
 ## [Slack was extremely beneficially for this project. I got excellent feedback here](https://app.slack.com/client/T0L30B202)
 
+## **[BACK TO TOP](#content-quick-links)** *
+<hr style="height:5px;border-width:0;color:gray;background-color: #005b96">
+
 # MY ACKNOWLEDGEMENTS
 1. I would like to acknowledge my mentor [Guido Cecilio](https://code-institute-room.slack.com/team/U4ALPK7UG) for his help with keeping the design consistent and also for his guidance on user authentification and handling of errors.
 1. I would like to acknowledge [Natasha Clerkin](https://github.com/natashaclerkin/singularartistsMS1) for inspiration from her fantastic README.md file. 
 1. I would like to acknowledge [My Cookbook](http://mycookbook-project.herokuapp.com/) for the initial inspiration to get my design off the ground. This site has an amazing high level design and encouraged me to spend some extra time making my site look attractive.
 1. I also found the [task manager](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DCP101+2017_T3/courseware/9e2f12f5584e48acb3c29e9b0d7cc4fe/579bbf01edaf47938e6a860b8f08f275/?child=first) walk through project of great help. I would continously refer back to it to break down and understand the backend end funcitionality for my own project.
+
+## **[BACK TO TOP](#content-quick-links)** *
+<hr style="height:5px;border-width:0;color:gray;background-color: #005b96">
 
 # My Disclaimer 
 * This project is for edcational purposes only.

@@ -17,6 +17,18 @@ The website uses HTML and CSS and Javascript in the front end. With my main css 
 
 ![SNEAKERFANS](wireframes/responsive.png)
 
+# CONTENT QUICK LINKS
+## [UX](#ux)
+## [FEATURES](#available-features)
+## [TECHNOLOGIES](#technologies-used)
+## [TESTING](#testing-steps)
+## [DEPLOYMENT](#deployment-and-testing)
+## [CREDITS](#code-credits)
+## [ACKNOWLEDGEMENTS](#my-acknowledgements)
+## [DISCLAIMER](#my-disclaimer)
+
+# UX
+
 ## Wireframes:
 My initial wireframes and database schemas were sketched on paper and when I was happy I was going in the correct direction I used [Balsamiq](https://balsamiq.com/wireframes/) to finalise my mockups for the front end. For my database schema I used [db diagram](https://dbdiagram.io/). 
 The main inspiration for my website is from the global sneaker giant [nike.com](https://www.nike.com/ie/).  All wireframes can be seen in the links below.
@@ -36,7 +48,7 @@ The main inspiration for my website is from the global sneaker giant [nike.com](
 * [Database Schema](wireframes/schema.png)
 
 
-# User Stories:
+## User Stories:
 1. **As a fan of new and retro sneakers I am seeking a website that allows me to search sneakers as well as add my own ideas to the website**
 
 2. **As a sneaker collector I would like to add images and descriptions of my collection for others to see**
@@ -423,6 +435,33 @@ I have imported abort from Flask to deal with user error using appropriate error
 
 28. [CSS Autoprefixer](https://autoprefixer.github.io/)
 * I used Autoprefixer to ensure all of my css styles would work on all browsers.
+
+# CODE CREDITS
+
+## [Show and hide password](https://codepen.io/Sohail05/pen/yOpeBm)
+
+## [How to use loop index to generate unique ids for modals within for loops](https://code-institute-room.slack.com/archives/C7JQY2RHC/p1619027301419600)
+
+## [MongoDB aggregate method to show 6 random samples on home page](https://stackoverflow.com/questions/2824157/random-record-from-mongodb)
+
+## [Flask error handlers](https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/)
+
+## [Whenever I got stuck I regularly checked stack overflow for inspiration and ideas](https://stackoverflow.com/)
+
+## [I also used W3C schools for help on html patterns and one-error attributes. And also for inspiration on my javascript function to show and hide passwords](https://www.w3schools.com/)
+
+## [Slack was extremely beneficially for this project. I got excellent feedback here](https://app.slack.com/client/T0L30B202)
+
+# MY ACKNOWLEDGEMENTS
+1. I would like to acknowledge my mentor [Guido Cecilio](https://code-institute-room.slack.com/team/U4ALPK7UG) for his help with keeping the design consistent and also for his guidance on user authentification and handling of errors.
+1. I would like to acknowledge [Natasha Clerkin](https://github.com/natashaclerkin/singularartistsMS1) for inspiration from her fantastic README.md file. 
+1. I would like to acknowledge [My Cookbook](http://mycookbook-project.herokuapp.com/) for the initial inspiration to get my design off the ground. This site has an amazing high level design and encouraged me to spend some extra time making my site look attractive.
+1. I also found the [task manager](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DCP101+2017_T3/courseware/9e2f12f5584e48acb3c29e9b0d7cc4fe/579bbf01edaf47938e6a860b8f08f275/?child=first) walk through project of great help. I would continously refer back to it to break down and understand the backend end funcitionality for my own project.
+
+# My Disclaimer 
+* This project is for edcational purposes only.
+
+<hr style="height:5px;border-width:0;color:gray;background-color: #005b96">
 
 
 

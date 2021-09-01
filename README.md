@@ -20,6 +20,9 @@ The website uses HTML and CSS and Javascript in the front end. With my main css 
 # CONTENT QUICK LINKS
 ## [UX](#ux)
 ## [FEATURES](#available-features)
+## [SITEMAP](#sitemap-layout)
+## [DATABASE](#database-schema)
+## [SECURITY](#security-features)
 ## [TECHNOLOGIES](#technologies-used)
 ## [TESTING](#testing-steps)
 ## [DEPLOYMENT](#deployment-and-testing)
@@ -63,27 +66,27 @@ The main inspiration for my website is from the global sneaker giant [nike.com](
 ### What am I making?
 A website/app that offers users to sign up/ Login/ Read data from other users/ Write data to the database/ view, edit and delete their own content on their profile page. The site will create a sneaker community while also allowing businesses to see what styles are most popular to increase revenue.
 
-### Website business goals:
+### Website business goals
 1. Create a community of sneakerfans 
 1. Allow businesses to sign up for a monthly fee to collect data and feedback on users sneaker preferences 
 1. Increase social media and website traffic with the aim of creating revenue from advertising from the major sneaker brands.
 
-### Website target audience:
+### Website target audience
 1. Sneaker lovers and collectors
 1. Sneaker resellers
 1. Sneaker retailers
 
-### User value:
+### User value
 1. Sneaker lovers and collectors will gain a positive emotional experience from using the site and they can search the entire database to find retro sneakers they had forgotton about that will bring back memories and also encourage them to upload their own favourite sneakers.
 1. Retailers and resellers can see exactly what sneakers are the most popular and at what times of the year they need to stock up on popular items to increase their revenue.
 
-### What users can expect:
+### What users can expect
 1. An easy to navigate no fuss website that is pleasant to use.
 1. Easy to sign up quickly and begin browsing and adding data to the website.
 1. The ability to edit and delete uploads to their own profile.
 1. The ability to read and learn about rare sneakers uploaded to the database by other users.
 
-### What is worth doing:
+### What is worth doing
 1. A simple sign up form 
 1. A simple log in form 
 1. A clean profile page
@@ -92,7 +95,7 @@ A website/app that offers users to sign up/ Login/ Read data from other users/ W
 1. Give users the ability to delete their own data
 1. A search box to allow users to enter keywords based on database key values so users can browse the entire database efficiently
 
-### What makes it a good experience:
+### What makes it a good experience
 1. Simple outlay. 
 1. clean images placed in materilize image cards of the same heights.
 1. Familar simple navigation
@@ -101,7 +104,7 @@ A website/app that offers users to sign up/ Login/ Read data from other users/ W
 
 ## Scope:
 
-### Features for this release:
+### Features for this release
 1. Sign up form.
 1. Log in form.
 1. User edit form. 
@@ -111,7 +114,7 @@ A website/app that offers users to sign up/ Login/ Read data from other users/ W
 1. Call to action buttons based on information hierarchy.
 1. Social media links.
 
-### User requirements:
+### User requirements
 1. The ability to read and learn about rare sneakers
 1. The ability to create content and add to the website database.
 1. The ability to edit content belonging to that user.
@@ -119,7 +122,7 @@ A website/app that offers users to sign up/ Login/ Read data from other users/ W
 1. The ability to follow the brand on social media. 
 1. The ability to view images.
 
-### How we will achieve these requirements:
+### How we will achieve these requirements
 1. By adding collections to the mongodb database that the user can access through forms.
 1. By adding attractive image cards and simple styling.
 1. By implementing appropriate user forms.
@@ -157,19 +160,19 @@ I have used a fixed navigation bar to allow users to move to any other section f
 1. Fixed navigation.
 1. Consistent layout and theme.
 
-### User conventional tools:
+### User conventional tools
 1. Clear headings. 
 1. Clickable elements clearly labelled. 
 1. Easy to read nav bar. 
 1. Social media links in the form of clickable icons in the footer. 
 
-### Progressive disclosure:
+### Progressive disclosure
 I have placed the priority content on the home page so the user sees this first.
 I have arranged the supporting content in order of priority in additional sections. 
 Each section links to the most important items to engage users and encourage a conversion
 in the form of a new user registering an account.
 
-### Elements that have priority:
+### Elements that have priority
 1. Navigation menu with fixed scrolling.
 1. Clickable logo with return to home link.
 1. Image cards of fixed height.
@@ -178,14 +181,14 @@ in the form of a new user registering an account.
 
 ## Surface
 
-### Colors:
+### Colors
 The website is inspired by [Nike](https://www.nike.com/ie/). I always loved the simplicity of their website. I set out to try and make the website as enticing as possible while using as little styling as possible. I stuck with the basic sans serif font and white body background. My navbar and footer are also black with white text. The image cards text have some orange colors and sign up links are red. These colors are inspired by both the nike website and one the most iconic sneakers of all time
 The [Air Jordan 3](https://sneakernews.com/wp-content/uploads/2021/05/Air-Jordan-3-Cardinal-2022.jpg).
 
-### Fonts:
+### Fonts
 For all fonts I kept things simple with the default sans serif. I added some underlines to my page headings and the simplicity seems to suit the style I wanted for the website.
 
-### Images: 
+### Images 
 The home page uses a hero image of a pair of Air Jordan Sneakers on feet. The image is clean and
 emotive and sets the tone for the website. All other images come from database entries from users. I have created neat materialize cards of fixed height to display all images with continuity. When the image cards are clicked the user is brought to the full sneaker description page where they can view a larger image of the sneaker. I used some box shadow to help this image pop a little. 
 I used photoshop to design the company logo.
@@ -195,7 +198,7 @@ circle icon.
 
 ![Error Jumpan](static/images/jumpman.png)
 
-### Order and sequence:
+### Order and sequence
 1. Navigation order Not logged in - Home/ Browse Collection/ Log In/ Sign Up
 1. Navigation order logged in - Home/ Browse Collection/ My Sneakers/ Add Sneakers/ Log Out
 1. Home page order - Hero image/ Call to action/ Heading/ Materialize image cards/ Sign Up link
@@ -206,7 +209,7 @@ circle icon.
 1. Add Sneakers order - Heading/ Form/ Choose Category input/ Shoe Name input/ Release Year input/ Shoe Description input/ Image url input/ Submit button
 1. Footer section order - Social links/ copyright.
 
-### Other themes:
+### Other themes
 1. Use of relevant font awesome icons to add a professional touch.
 1. Use of subtle shadows to lift some elements off the page.
 
@@ -279,7 +282,7 @@ Only admin has access to this page. When admin logs in they are directed to the 
 I have added social media links and contact details in the footer. All social media icons are clickable and work in external tabs.
 I also added copyright details.
 
-### Features to add for future releases:
+## Features to add for future releases:
 There are some features that I would love to implement on future releases:
 
 1. #### Add Comments Likes and Views - The end goal for this site is to create a community of sneaker lovers and collectors. I would like to eventually have a social aspect whereby users can comment on and like other users images. I would also like to collect the amount of likes and views on specific sneakers to allow this data to be shared as an analytics tool for sneaker retailers.
@@ -288,7 +291,7 @@ There are some features that I would love to implement on future releases:
 4. #### Restrict Image type - In order to keep the website nice and clean with no broken images I would like to implement a function in the backend which will only allow data to be written to the database if the image url meets the criteria of jpeg or png. If not the user will be given a message that "this image is not a png or jpeg please try again". I had began researching this option towards the end of the project but unfortunatley I just ran out of time to implement it.
 5. #### Admin dashboard - Due to time constraints my admin access is limited to just managing categories. For future releases I would like to add a full admin dashboard which allows to monitor all user and retailer accounts. If user content is deemed inappropriate it can be removed from the site or updated as necessary. Retailer accounts and suscriptions can be kept track of from the admin dashbar.
 
-# Sitemap
+# Sitemap Layout
 The site map was designed using [Lucid Chart](https://www.lucidchart.com/pages/)
 
 ![Sitemap](wireframes/sitemap.png)

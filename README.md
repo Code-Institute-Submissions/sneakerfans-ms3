@@ -481,7 +481,7 @@ I have imported abort from Flask to deal with user error using appropriate error
 
 ### Working with the local copy:
 1. Install all the project dependencies from the terminal window of your IDE by typing: pip3 install -r requirements.txt.
-2. In MongoDB  create a database. First create a cluster, then a database of the following four collections:
+2. In [MongoDB](https://www.mongodb.com/) create a database. First create a cluster, then a database of the following four collections:
 ![DB Schema](wireframes/schema.png)
 3. Create an env.py file to contain the environment variables, which should include the following:
 * Add import os to the top of the file

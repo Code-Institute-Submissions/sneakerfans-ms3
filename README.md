@@ -460,6 +460,41 @@ I have imported abort from Flask to deal with user error using appropriate error
 ## **[BACK TO TOP](#content-quick-links)** *
 <hr style="height:5px;border-width:0;color:gray;background-color: #005b96">
 
+# Deployment Process
+
+## Local Deployment
+### Required tools:
+* [Python3](https://www.python.org/download/releases/3.0/)
+* [PIP](https://pip.pypa.io/en/stable/)
+* [Gitpod](https://www.gitpod.io/)
+* [MongoDB](https://www.mongodb.com/)
+
+### Create a local copy:
+
+### Directions: 
+1. On GitHub, navigate to the main page of the repository [https://github.com/Joe2308/sneakerfans-ms3]. 
+2. At the top of the repository, select Code drop down and copy the Clone URL.
+![Clone](wireframes/clone.png)
+3. In your IDE workspace, open a Terminal window and use the cd command to change the directory to where you want the cloned directory to be made and type git clone and paste in https://github.com/Joe2308/sneakerfans-ms3.git.
+4. Click enter and the project will be created and cloned locally.
+
+### Working with the local copy:
+1. Install all the project dependencies from the terminal window of your IDE by typing: pip3 install -r requirements.txt.
+2. In MongoDB  create a database. First create a cluster, then a database of the following four collections:
+![DB Schema](wireframes/schema.png)
+3. Create an env.py file to contain the environment variables, which should include the following:
+import os
+
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", "**secret key goes here**")
+os.environ.setdefault("MONGO_URI", "**mongo uri goes here**")
+os.environ.setdefault("MONGO_DBNAME", "**database name goes here**")
+
+4. In order to prevent sensitive information such as secret keys and database passwords being pushed to your public github repository you need to create a .gitignore file in the root directory of the project and add the env.py file.
+5. Type python3 app.py into the terminal to run the app locally. In app.py Set debug to TRUE to work on the application in a live development environment.
+
+
 # CODE CREDITS
 
 ## [Show and hide password](https://codepen.io/Sohail05/pen/yOpeBm)

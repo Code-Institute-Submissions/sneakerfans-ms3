@@ -468,6 +468,7 @@ I have imported abort from Flask to deal with user error using appropriate error
 * [PIP](https://pip.pypa.io/en/stable/)
 * [Gitpod](https://www.gitpod.io/)
 * [MongoDB](https://www.mongodb.com/)
+* [PyMongo](https://pymongo.readthedocs.io/en/stable/)
 
 ### Create a local copy:
 
@@ -494,6 +495,37 @@ I have imported abort from Flask to deal with user error using appropriate error
 4. In order to prevent sensitive information such as secret keys and database passwords being pushed to your public github repository you need to create a .gitignore file in the root directory of the project and add the env.py file.
 5. Type python3 app.py into the terminal to run the app locally. In app.py Set debug to TRUE to work on the application in a live development environment.
 
+## Deployment to Heroku
+### Tell Heroku which applications and depencies are needed to run the app:
+* Create a requirements.txt file by typing "pip3 freeze --local > requirements.txt in the terminal.
+* Creat a Procfile so Heroku knows how to run the app by typing echo web: python app.py > Procfile in the terminal. 
+* Push these files to github before deploying. If any new packages or depencies have been added since the last time it was pushed to github the requirements.txt file will need to be updated.
+
+### Deploy from github:
+* Next log into [Heroku](https://id.heroku.com/login) and create a new app and choose the location closest to you.
+
+![New App](wireframes/new-app.png)
+
+* For this project I enabled automatic deployment from github for ease of use.
+* Choose your github profile and add your repository name.
+
+![Auto deploy](wireframes/auto-deploy.png)
+
+* Press the search button and when it is found click the connect to this app button.
+
+### Tell Heroku variables required to run the app:
+* Before enabling automatic deployment we first set up the required variables in Heroku from our env.py file.
+* Go to settings in Heroku and select reveal config vars.
+* Fill in config vars fields by copying and pasting the data from the env.py file. 
+
+![Config vars](wireframes/config-vars.png)
+
+* We can now enable automatic deployment in Heroku.
+* Click deploy main branch in order for Heroku to receive the code from github.
+* The app should now be successfully deployed and will auto update each time we push new code to the github repository. 
+
+## **[BACK TO TOP](#content-quick-links)** *
+<hr style="height:5px;border-width:0;color:gray;background-color: #005b96">
 
 # CODE CREDITS
 

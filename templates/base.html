@@ -38,7 +38,7 @@
 
                             <!-- Show nav elements based on whether user is logged in or logged out -->
                             {% if session.user|lower %}
-                                <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="fas fa-user"></i>
+                                <li><a href="{{ url_for('profile') }}"><i class="fas fa-user"></i>
                                         My Sneakers</a></li>
                                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                             {% else %}
@@ -59,7 +59,7 @@
             <li><a href="{{ url_for('all_sneakers') }}">Browse Collection</a></li>
             <!-- Show nav elements based on whether user is logged in or logged out -->
             {% if session.user|lower %}
-                <li><a href="{{ url_for('profile', username=session['user']) }}">My Sneakers</a></li>
+                <li><a href="{{ url_for('profile') }}">My Sneakers</a></li>
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
                 <li><a href="{{ url_for('login') }}">Log In</a></li>

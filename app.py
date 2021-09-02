@@ -69,47 +69,56 @@ def search():
 # Sign Up page
 @app.route("/sign_up", methods=["GET", "POST"])
 def sign_up():
+    if is_authenticated():
+        return redirect(url_for("profile"))
+
     if request.method == "POST":
+        username = request.form.get("username").lower()
         # check if username already exists in db
         existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+            {"username": username})
 
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("sign_up"))
 
         register = {
-            "username": request.form.get("username").lower(),
+            "username": username,
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(register)
 
         # put the new user into 'session' cookie
-        session["user"] = request.form.get("username").lower()
+        session["user"] = username
         flash("Registration Successful!")
         return redirect(url_for("login"))
+    
     return render_template("sign-up.html")
 
 
 # Log in page
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    if is_authenticated():
+        return redirect(url_for("profile"))
+
     if request.method == "POST":
+        username = request.form.get("username").lower()
         # check if username already exists in db
         existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+            {"username": username})
 
         if existing_user:
             # Make sure password input matches database password
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
-                session["user"] = request.form.get("username").lower()
+                session["user"] = username
                 # Send Admin to manage categories
                 if session['user'] == "admin":
                     flash("Welcome Admin")
                     return redirect(url_for('get_categories'))
-                flash("Welcome, {}!".format(request.form.get("username")))
-                return redirect(url_for("profile", username=session["user"]))
+                flash("Welcome, {}!".format(username.capitalize()))
+                return redirect(url_for("profile"))
             else:
                 # Password does not match
                 flash("Incorrect password and/or username")
@@ -124,8 +133,8 @@ def login():
 
 
 # My sneakers page
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
+@app.route("/profile", methods=["GET", "POST"])
+def profile():
     # Check if user name is authenticated
     if is_authenticated():
         sneakers = list(mongo.db.sneakers.find())
@@ -144,11 +153,11 @@ def profile(username):
 @app.route("/logout")
 def logout():
     # If user is not authenticated redirect 400
-    if not is_authenticated():
-        abort(400)
-    # Remove user from session cookies
-    flash("You have successfully logged out")
-    session.pop("user")
+    if is_authenticated():
+        # Remove user from session cookies
+        flash("You have successfully logged out")
+        session.pop("user")
+    
     return redirect(url_for("login"))
 
 
@@ -181,7 +190,7 @@ def add_sneakers():
             # Insert all form data to mongodb sneakers collection
             mongo.db.sneakers.insert_one(add)
             flash("Your sneakers have been added!")
-            return redirect(url_for('profile', username=session['user']))
+            return redirect(url_for('profile'))
     # Create categories variable to alphabetically sort html select
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add-sneakers.html", categories=categories)
@@ -210,7 +219,7 @@ def edit_sneakers(sneaker_id):
             # Update mongodb sneakers collection
             mongo.db.sneakers.update({"_id": ObjectId(sneaker_id)}, add)
             flash("Your sneakers have been updated!")
-            return redirect(url_for('profile', username=session['user']))
+            return redirect(url_for('profile'))
 
     sneaker = mongo.db.sneakers.find_one_or_404({"_id": ObjectId(sneaker_id)})
 
@@ -229,21 +238,24 @@ def delete_sneakers(sneaker_id):
             abort(400)
         mongo.db.sneakers.remove({"_id": ObjectId(sneaker_id)})
         flash("Sneakers successfully deleted")
-        return redirect(url_for('profile', username=session['user']))
+        return redirect(url_for('profile'))
+
     flash("You must be a user to delete sneakers")
+    return redirect(url_for("login"))
 
 
 # Manage Categories
 @app.route("/get_categories")
 def get_categories():
-    categories = list(mongo.db.categories.find().sort("category_name", 1))
     # Check if user is authenticated
-    if is_authenticated():
-        if "user" in session:
-            if session["user"] == "admin".lower():
-                return render_template(
-                    "categories.html", categories=categories)
-            return redirect(url_for("get_categories"))
+    if not is_authenticated():
+        flash("You must be authenticated to list categories")
+        return redirect(url_for("login"))
+    
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    if session["user"] == "admin":
+        return render_template("categories.html", categories=categories)
+    return redirect(url_for("get_categories"))
 
 
 # Add category
@@ -304,7 +316,9 @@ def delete_category(category_id):
         mongo.db.categories.remove({"_id": ObjectId(category_id)})
         flash("Category successfully deleted")
         return redirect(url_for("get_categories"))
+    
     flash("You must be an admin to delete categories")
+    return redirect(url_for("get_categories"))
 
 
 # 404 error page

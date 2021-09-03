@@ -4,6 +4,7 @@
 ## [Users](#user-story-testing)
 ## [Validation](#code-validation)
 ## [Manual Tests](#manual-testing)
+## [Authenticaiton](#user-authentication)
 ## [Forms](#form-validation)
 ## [Modals](#modal-testing)
 ## [CRUD](#crud-testing)

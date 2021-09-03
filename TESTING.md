@@ -5,6 +5,7 @@
 ## [Validation](#code-validation)
 ## [Manual Tests](#manual-testing)
 ## [Forms](#form-validation)
+## [Modals](#modal-testing)
 ## [CRUD](#crud-testing)
 ## [Security](#security-features)
 ## [Bugs](#bugs-test)
@@ -122,7 +123,7 @@ I used jinja if statements to ensure no user could edit or delete another users 
 ## **[BACK TO TOP](#content-quick-links)** *
 <hr style="height:5px;border-width:0;color:gray;background-color: #005b96">
 
-### Modals
+### Modal Testing
 Defensive programming has been used to make sure a user does not delete data by accident. To achieve this all delete buttons have been wired up to modals to ask the user if they are sure they want to delete. Modals have been checked to see if their buttons work logically. The cancel button closes the modal while the delete button removes the data from the datbase and redirects the user to the previous page which they came from.
 
 ## **[BACK TO TOP](#content-quick-links)** *

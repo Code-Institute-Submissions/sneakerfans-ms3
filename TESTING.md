@@ -10,6 +10,7 @@
 4. **As a sneaker retailer** I created an account with the SNEAKERFANS website. It allows me to see what sneakers people enjoy and it also gives me great ideas for rare releases I can add to my store to stand out from my competitors. I would love if I had a way of seeing what sneakers are trending on the site based on how many views a sneaker has or how many likes it has. I have spoken to the website owner and they have assured me this is a feature they will soon be adding. I would definately pay a suscription for this type of information. It would help me boost sales and stay ahead of the curve.
 
 ## Code Validation:
+
 ### **Html**:
 
 ![Html validation](wireframes/html-validate.png)
@@ -36,3 +37,23 @@ All python syntax was validated using the [Python extends class validator](https
 ![Javascript validation](wireframes/jshint.png)
 All Javascript code was validated using [Jshint validator](https://jshint.com/). My code passed with no major errors.
 
+## Manual Testing:
+
+### Responsive Design: 
+For this project I decided to use [Materialize 1.0.0](https://materializecss.com/). Initially I thought of changing back to bootsrap. But the more I used it the more I like the simplicity of Materialize. Its grid system allows for excellent responsive designs. I used [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) to check how my application was looking on all screen sizes and adjusted as necessary. I had to used minimal media queries in my css code.
+
+### Call to action buttons:
+I checked and rechecked all buttons were working on all devices and were leading to the correct sections of the website. It was also important that I laid out 
+my CTA choices in order of priorty to my user stories with a button to encourage new visitors to sign up being the most important.
+
+### External links:
+I made sure to check that all links and social media links were directed to the correct URLS and also that my target="_blank" attribute was working. 
+All external links open in a new browser tab.
+
+### Lighthouse performance test:
+I used Lighthouse in Chrome devtools to test my website's performance.
+I increased my SEO scores by adding meta content for seo description.
+I also increased my best practises score by adding rel="noreferrer" to all external links.
+I found that testing with lighthouse generated higher scores in incognito mode due to browser caching.
+
+![Lighhouse test](wireframes/lighthouse.png)

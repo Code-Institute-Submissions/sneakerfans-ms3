@@ -51,9 +51,15 @@ I made sure to check that all links and social media links were directed to the 
 All external links open in a new browser tab.
 
 ### Lighthouse performance test:
+![Lighhouse test](wireframes/lighthouse.png)
+
 I used Lighthouse in Chrome devtools to test my website's performance.
 I increased my SEO scores by adding meta content for seo description.
 I also increased my best practises score by adding rel="noreferrer" to all external links.
 I found that testing with lighthouse generated higher scores in incognito mode due to browser caching.
 
-![Lighhouse test](wireframes/lighthouse.png)
+### Accessibility:
+
+![Accessiblity test](wireframes/wave.png)
+
+I used [WAVE web accessibility tool](https://wave.webaim.org/) to make sure the site was accessable to the visually impaired. I also used [a11y](https://color.a11y.com/) to make sure my color contrasts between fonts and backgrounds was acceptable without excessively comprising my vision of the website final design. There were no major errors but some contrast issues. I decided not to change my origional concept as a google lighthouse test gave an accessibility score over 95%.

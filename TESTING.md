@@ -8,3 +8,31 @@
 3. **As the website owner** I would like to create a community of sneaker lovers who can share images and information on popular and extremely rare sneakers. The website does exactly what it says on the tin. New users are signing up each day and sharing their passion for sneakers. It is easy to sign up and add your sneakers in a matter of minutes
 
 4. **As a sneaker retailer** I created an account with the SNEAKERFANS website. It allows me to see what sneakers people enjoy and it also gives me great ideas for rare releases I can add to my store to stand out from my competitors. I would love if I had a way of seeing what sneakers are trending on the site based on how many views a sneaker has or how many likes it has. I have spoken to the website owner and they have assured me this is a feature they will soon be adding. I would definately pay a suscription for this type of information. It would help me boost sales and stay ahead of the curve.
+
+## Code Validation:
+### **Html**:
+
+![Html validation](wireframes/html-validate.png)
+I checked all Html pages using the url from my Heroku application to avoid errors due to jinja templating. I had one error in the html validator which was using the type attribute on an anchor link. Having removed this my Html code passed all validation. The above image is showing a heading error because of flash messaging added to my base.html to extend to all other relevant pages. All Html code was validated using the [W3C HTML validator](https://validator.w3.org/).
+
+### **CSS**:
+
+![CSS validation](wireframes/css-validate.png)
+All CSS code passed using the [W3C CSS validator](https://jigsaw.w3.org/css-validator/).
+
+### **PEP8 Compliance**:
+
+![PEP8 validation](wireframes/pep8.png)
+All code was checked for valid indentation, whitespace, blank line space and line length using 
+the [PEP8 validator](http://pep8online.com/).
+
+### **Python Syntax**:
+
+![Python syntax validation](wireframes/extends-class.png)
+All python syntax was validated using the [Python extends class validator](https://extendsclass.com/python-tester.html).
+
+### **Javascript Validation**:
+
+![Javascript validation](wireframes/jshint.png)
+All Javascript code was validated using [Jshint validator](https://jshint.com/). My code passed with no major errors.
+

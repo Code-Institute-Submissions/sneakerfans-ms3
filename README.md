@@ -18,7 +18,7 @@ The website uses HTML and CSS and Javascript in the front end. With my main css 
 ![SNEAKERFANS](wireframes/responsive.png)
 
 # CONTENT QUICK LINKS
-## [UX](#ux)
+## [UX](#wireframes)
 ## [FEATURES](#available-features)
 ## [SITEMAP](#sitemap-layout)
 ## [DATABASE](#database-schema)

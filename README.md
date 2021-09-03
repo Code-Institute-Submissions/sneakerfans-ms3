@@ -462,7 +462,7 @@ I have imported abort from Flask to deal with user error using appropriate error
 
 # Testing Steps
 
-## Click to view [TESTING.md](/workspace/sneakerfans-ms3/TESTING.md)
+## Click to view [TESTING.md](https://github.com/Joe2308/sneakerfans-ms3/blob/main/TESTING.md)
 
 ## **[BACK TO TOP](#content-quick-links)** *
 <hr style="height:5px;border-width:0;color:gray;background-color: #005b96">

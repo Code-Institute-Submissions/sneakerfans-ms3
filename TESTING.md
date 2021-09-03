@@ -89,7 +89,7 @@ I used [WAVE web accessibility tool](https://wave.webaim.org/) to make sure the 
 <hr style="height:5px;border-width:0;color:gray;background-color: #005b96">
 
 ## User Authentication:
-I carried out exstensive testing to make sure no user error caused the site malfunction. To acheieve the I would check all urls available to non logged in and logged in users and manually change them in the browser. I got the following results: 
+I carried out exstensive testing to make sure no user error caused the site to malfunction. To acheieve this I would check all urls available to non logged in and logged in users and manually change them in the browser. I got the following results: 
 
 1. **Changing to a url that does not exists**: 
 This gave me a 404 error which lets the user know there is no such page and guides them to the home page. 
@@ -100,10 +100,10 @@ This gave me a 404 error which lets the user know there is no such page and guid
 While logged or authenticated if a user tries to change a url to a url that only admin can access. They are given a warning message that "Only admin can access this page!" The user is guided back to their profile page.
 
 3. **Buttons and links**:
-If a user is authenticated when they try to used the sign up buttons and links they will be redirected to their profile page instead of the sign up form
+If a user is authenticated when they try to use the sign up buttons and links they will be redirected to their profile page instead of the sign up form
 
 ### Object Id validation:
-If an Object Id from the database is not valid the user will get a 400 bad request and are guided back to the home page. I tested this by manually changing the object id to and unknown id in the brower search bar. 
+If an Object Id from the database is not valid the user will get a 400 bad request and are guided back to the home page. I tested this by manually changing the object id to an unknown id in the browser search bar. 
 
 ![400 error](wireframes/error.png)
 
@@ -111,7 +111,7 @@ If an Object Id from the database is not valid the user will get a 400 bad reque
 I used jinja if statements in my templates to hide some elements of the navigation bar from non registered users. I manually tested this to make sure everything worked as expected.
 
 ### Features Only Available to Admin:
-I used jinja if statements to hide some elements of the site from non admin users. I also added user authentification in my back end code to make sure a user could not force their way to admin access. I tested this manually to ensure all worked as expected.
+I used jinja if statements to hide some elements of the site from non admin users. I also added user authentication in my back end code to make sure a user could not force their way to admin access. I tested this manually to ensure all worked as expected.
 
 ### Users Cannot Access Another Users Profile:
 I used jinja if statements to ensure no user could edit or delete another users additions to the webiste database. I manually tested the application to ensure this feature worked as expected.
@@ -128,13 +128,13 @@ I used jinja if statements to ensure no user could edit or delete another users 
 <hr style="height:5px;border-width:0;color:gray;background-color: #005b96">
 
 ### Modal Testing
-Defensive programming has been used to make sure a user does not delete data by accident. To achieve this all delete buttons have been wired up to modals to ask the user if they are sure they want to delete. Modals have been checked to see if their buttons work logically. The cancel button closes the modal while the delete button removes the data from the datbase and redirects the user to the previous page which they came from.
+Defensive programming has been used to make sure a user does not delete data by accident. To achieve this all delete buttons have been wired up to modals to ask the user if they are sure they want to delete. Modals have been checked to see if their buttons work logically. The No button closes the modal while the Yes button removes the data from the datbase and redirects the user to the previous page which they came from.
 
 ## **[BACK TO TOP](#content-quick-links)** *
 <hr style="height:5px;border-width:0;color:gray;background-color: #005b96">
 
 ## CRUD Testing:
-I have inspected the website on all devices to ensure it functionality meets CRUD standards. All users have the ability to Create, Read, Update and Delete content that belongs to them. 
+I have inspected the website on all devices to ensure its functionality meets CRUD standards. All users have the ability to Create, Read, Update and Delete content that belongs to them. 
 * **Step 1**: Visit site and view data from existing users in the browse collection and home pages.
 * **Step 2**: Create an account via the sign up form.
 * **Step 3**: Add data to your profile using the add sneakers form. 

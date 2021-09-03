@@ -1,4 +1,4 @@
-# TESTING STEPS
+# TESTING.md
 
 # CONTENT QUICK LINKS
 ## [Users](#user-story-testing)
@@ -8,7 +8,7 @@
 ## [CRUD](#crud-testing)
 ## [Security](#security-features)
 ## [Bugs](#bugs-test)
-## [RETURN TO README](/workspace/sneakerfans-ms3/README.md)
+## [RETURN TO README](https://github.com/Joe2308/sneakerfans-ms3/blob/main/README.md)
 
 ## User story testing:
 1. **As a fan of new and retro sneakers** I am looking for a website where I can share my interest in sneakers with other sneaker fans. Having found the SNEAKERFANS website this allows me to do just that. I can use the browse collection search bar to check for all types of sneakers and to give me great ideas for my next purchase.

@@ -91,8 +91,8 @@ def sign_up():
         # put the new user into 'session' cookie
         session["user"] = username
         flash("Registration Successful!")
-        return redirect(url_for("login"))
-    
+        return redirect(url_for("profile"))
+
     return render_template("sign-up.html")
 
 
@@ -157,7 +157,7 @@ def logout():
         # Remove user from session cookies
         flash("You have successfully logged out")
         session.pop("user")
-    
+
     return redirect(url_for("login"))
 
 
@@ -251,7 +251,7 @@ def get_categories():
     if not is_authenticated():
         flash("You must be authenticated to list categories")
         return redirect(url_for("login"))
-    
+
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     if session["user"] == "admin":
         return render_template("categories.html", categories=categories)
@@ -316,7 +316,7 @@ def delete_category(category_id):
         mongo.db.categories.remove({"_id": ObjectId(category_id)})
         flash("Category successfully deleted")
         return redirect(url_for("get_categories"))
-    
+
     flash("You must be an admin to delete categories")
     return redirect(url_for("get_categories"))
 

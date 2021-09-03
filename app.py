@@ -255,7 +255,8 @@ def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     if session["user"] == "admin":
         return render_template("categories.html", categories=categories)
-    return redirect(url_for("get_categories"))
+    flash("Only Admin can access categories!")
+    return redirect(url_for("profile"))
 
 
 # Add category

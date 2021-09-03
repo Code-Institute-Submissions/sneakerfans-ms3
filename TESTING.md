@@ -4,7 +4,7 @@
 ## [Users](#user-story-testing)
 ## [Validation](#code-validation)
 ## [Manual Tests](#manual-testing)
-## [Authenticaiton](#user-authentication)
+## [Authenticaton](#user-authentication)
 ## [Forms](#form-validation)
 ## [Modals](#modal-testing)
 ## [CRUD](#crud-testing)
@@ -98,6 +98,9 @@ This gave me a 404 error which lets the user know there is no such page and guid
 
 2. **Changing a user url to an admin url**:
 While logged or authenticated if a user tries to change a url to a url that only admin can access. They are given a warning message that "Only admin can access this page!" The user is guided back to their profile page.
+
+3. **Buttons and links**:
+If a user is authenticated when they try to used the sign up buttons and links they will be redirected to their profile page instead of the sign up form
 
 ### Object Id validation:
 If an Object Id from the database is not valid the user will get a 400 bad request and are guided back to the home page. I tested this by manually changing the object id to and unknown id in the brower search bar. 

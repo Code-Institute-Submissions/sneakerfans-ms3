@@ -16,6 +16,7 @@
         <a href="{{ url_for('add_sneakers') }}" class="buttons btn-large text-shadow">
             Add Sneakers <i class="fas fa-plus-square right" aria-hidden="true"></i>
         </a>
+        <!-- Only show link to manage categories if logged in user is admin -->
         {% if session.user|lower == "admin"|lower %}
             <a href="{{ url_for('get_categories') }}" class="buttons btn-large text-shadow">
                 Manage Categories <i class="fas fa-directions right" aria-hidden="true"></i>
@@ -24,31 +25,30 @@
     </div>
 </div>
 
-
-
-    <div class="row">
-        {% for sneaker in sneakers %}
-            {% if session.user|lower == sneaker.user %}
-                <div class="card-fixed col s12 m3 l4">
-                    <a href="{{ url_for('full_info', sneaker_id=sneaker._id) }}">
-                        <div class="card tooltipped" data-position="top" data-tooltip="Click to edit">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <!-- Show image from database or backup from images folder -->
-                                <img class="activator" src="{{ sneaker.image_url }}" alt="Sneaker Image"
-                                    onerror="this.onerror=null;this.src='../static/images/error-image.png';">
-                            </div>
-                            <div class="card-content">
-                                <!-- Show title, shoename and user from database -->
-                                <span class="card-title activator">{{ sneaker.category_name.capitalize() }}</span>
-                                <p class="shoe-name">{{ sneaker.shoe_name.title() }}</p>
-                                <p>Added by: <em>{{ sneaker.user }}</em></p>
-                            </div>
+<!-- Show all users sneakers on their profile page -->
+<div class="row">
+    {% for sneaker in sneakers %}
+        {% if session.user|lower == sneaker.user %}
+            <div class="card-fixed col s12 m3 l4">
+                <a href="{{ url_for('full_info', sneaker_id=sneaker._id) }}">
+                    <div class="card tooltipped" data-position="top" data-tooltip="Click to edit">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <!-- Show image from database or backup from images folder -->
+                            <img class="activator" src="{{ sneaker.image_url }}" alt="Sneaker Image"
+                                onerror="this.onerror=null;this.src='../static/images/error-image.png';">
                         </div>
-                    </a>
-                </div>
-            {% endif %}
-        {% endfor %}
-    </div>
+                        <div class="card-content">
+                            <!-- Show title, shoename and user from database -->
+                            <span class="card-title activator">{{ sneaker.category_name.capitalize() }}</span>
+                            <p class="shoe-name">{{ sneaker.shoe_name.title() }}</p>
+                            <p>Added by: <em>{{ sneaker.user }}</em></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
     
 
 {% endblock %}

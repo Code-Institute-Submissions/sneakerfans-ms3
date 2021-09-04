@@ -152,7 +152,7 @@ def profile():
 # Log out
 @app.route("/logout")
 def logout():
-    # If user is not authenticated redirect 400
+    # If user is authenticated
     if is_authenticated():
         # Remove user from session cookies
         flash("You have successfully logged out")

@@ -115,6 +115,12 @@ hr {
   }
 }
 
+@media only screen and (min-width:601px) and (max-width:1024px) {
+  .btn {
+    margin: 2px;
+  }
+}
+
 @media only screen and (min-width:601px) and (max-width:768px) {
   .row .col.m3 {
     width: 50%;

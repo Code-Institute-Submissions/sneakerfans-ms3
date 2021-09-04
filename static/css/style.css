@@ -115,6 +115,18 @@ hr {
   }
 }
 
+@media only screen and (min-width:601px) and (max-width:1024px) {
+  .col.m4 {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (min-width:601px) and (max-width:768px) {
+  .row .col.m3 {
+    width: 50%;
+  }
+}
+
 @media(max-width: 320px) {
   h2 {
     font-size: 35px;

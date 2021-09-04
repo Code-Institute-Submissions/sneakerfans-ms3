@@ -160,6 +160,10 @@ password hashing has been imported from werkzeug to ensure user security. I have
 
 * I have checked the dev tools console and python interperater and there do not appear to any unresolved errors in the application.
 
+* **Note**: I did leave an error on the site on purpose in the form of a broken image url link to show that my back up image is working in case of user error when adding images. This shows as an error in the console of failing to load image resourse.
+
+![Console Error](wireframes/console-error.png)
+
 ## **[BACK TO TOP](#content-quick-links)** *
 <hr style="height:5px;border-width:0;color:gray;background-color: #005b96">
 

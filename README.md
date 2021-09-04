@@ -350,8 +350,6 @@ This data is collected when a new user signs up.
 ### Password: 
 * This data is collected when a new user signs up. The password is encrypted by importing generate_password_hash from werkzeug.security.
 
-![Users](wireframes/users.png)
-
 ## **[BACK TO TOP](#content-quick-links)** *
 <hr style="height:5px;border-width:0;color:gray;background-color: #005b96">
 

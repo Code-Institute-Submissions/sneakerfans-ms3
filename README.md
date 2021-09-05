@@ -245,7 +245,6 @@ A simple login form of user name and password allows users to quickly log into t
 ### Sign Up
 A simple sign up form of username and password allows users to easily sign up. I have kept this form 
 very simple to reduce bounce rates and to encourage new users to sign up without having to verify email links and passwords. As the site's user collection grows I may implement these enhanced security features. I have used the html pattern attribute to ensure certain criteria is met when signing up. I have also used materialize tool tips to clarify all steps of the form to new users.
-For added security, when a new user signs up they are directed to the login page to re enter their details instead of being given direct access to the site.
 
 ![SNEAKERFANS](wireframes/sign-up.png)
 
